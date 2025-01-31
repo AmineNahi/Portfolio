@@ -54,8 +54,8 @@
         <img src="images/Portfolio.png" alt="Projet 2" class="img-fluid rounded">
         <h3>Portfolio Dynamique</h3>
         <p>Site portfolio avec animations et back-end Flask.</p>
-        <a href="https://github.com/username/project2" target="_blank" class="btn btn-primary">GitHub</a>
-        <a href="https://portfolio-demo.com" target="_blank" class="btn btn-secondary">Démo</a>
+        <a href="https://github.com/AmineNahi/Portfolio" target="_blank" class="btn btn-primary">GitHub</a>
+        <a href="index.html" target="_blank" class="btn btn-secondary">Démo</a>
       </div>
   
       <!-- Projet 3 - Appli Flutter de Gestion de Projet -->
@@ -77,23 +77,42 @@
   </section>
 
   <section id="contact" class="container my-5">
-    <h2>Contact</h2>
-    <form>
+    <h2 class="text-center">Contact</h2>
+    <p class="text-center">N'hésitez pas à me contacter pour toute question ou opportunité professionnelle.</p>
+  
+    <form action="https://formspree.io/f/mzzdgdqz" method="POST" class="contact-form mt-4">
       <div class="mb-3">
         <label for="name" class="form-label">Nom</label>
-        <input type="text" class="form-control" id="name" required>
+        <input type="text" class="form-control" id="name" name="name" placeholder="Votre nom" required>
       </div>
+  
+      <div class="mb-3">
+        <label for="prenom" class="form-label">Prénom</label>
+        <input type="text" class="form-control" id="prenom" name="prenom" placeholder="Votre prénom" required>
+      </div>
+  
       <div class="mb-3">
         <label for="email" class="form-label">Email</label>
-        <input type="email" class="form-control" id="email" required>
+        <input type="email" class="form-control" id="email" name="email" placeholder="Votre email" required>
+      </div>g
+  
+      <div class="mb-3">
+        <label for="sujet" class="form-label">Sujet</label>
+        <input type="text" class="form-control" id="sujet" name="sujet" placeholder="Sujet de votre message">
       </div>
+  
       <div class="mb-3">
         <label for="message" class="form-label">Message</label>
-        <textarea class="form-control" id="message" rows="4" required></textarea>
+        <textarea class="form-control" id="message" name="message" rows="4" placeholder="Votre message" required></textarea>
       </div>
-      <button type="submit" class="btn btn-primary">Envoyer</button>
+  
+      <input type="hidden" name="_subject" value="Nouveau message depuis le portfolio">
+      <input type="hidden" name="_captcha" value="false"> <!-- Désactive le captcha Formspree -->
+  
+      <button type="submit" class="btn btn-primary w-100">Envoyer</button>
     </form>
   </section>
+  
 
   <footer class="bg-dark text-white text-center p-3">
     © 2024 Nahi Amine. Tous droits réservés.

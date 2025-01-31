@@ -1,41 +1,32 @@
-// Smooth scrolling for navigation links
-document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', function (e) {
-      e.preventDefault();
-      const targetId = this.getAttribute('href').slice(1);
-      const targetSection = document.getElementById(targetId);
-  
-      if (targetSection) {
-        window.scrollTo({
-          top: targetSection.offsetTop - 50,
-          behavior: 'smooth'
-        });
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.querySelector(".contact-form");
+
+  if (!form) {
+      console.error("Formulaire non trouvé ! Vérifiez que vous avez bien ajouté la classe 'contact-form' à votre <form>.");
+      return;
+  }
+
+  form.addEventListener("submit", async function (event) {
+      event.preventDefault(); // Empêche le rechargement immédiat de la page
+
+      const formData = new FormData(form);
+
+      try {
+          let response = await fetch(form.action, {
+              method: form.method,
+              body: formData,
+              headers: { "Accept": "application/json" }
+          });
+
+          if (response.ok) {
+              alert("Merci ! Votre message a bien été envoyé.");
+              form.reset();
+          } else {
+              alert("Erreur : Impossible d'envoyer le formulaire.");
+          }
+      } catch (error) {
+          alert("Erreur réseau. Vérifiez votre connexion.");
+          console.error(error);
       }
-    });
   });
-  
-  // Form validation
-  const form = document.querySelector('form');
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-  
-    const name = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const message = document.getElementById('message').value.trim();
-  
-    if (!name || !email || !message) {
-      alert('Veuillez remplir tous les champs.');
-      return;
-    }
-  
-    // Optionnel : Ajoutez une validation d'email basique
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      alert('Veuillez entrer une adresse email valide.');
-      return;
-    }
-  
-    alert('Merci pour votre message ! Je vous répondrai bientôt.');
-    form.reset();
-  });
-  
+});
