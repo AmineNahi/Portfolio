@@ -29,4 +29,11 @@ document.addEventListener("DOMContentLoaded", function () {
           console.error(error);
       }
   });
+  const toggleDarkMode = document.getElementById("dark-mode-toggle");
+
+    toggleDarkMode.addEventListener("click", function () {
+    document.body.classList.toggle("dark-mode");
+    toggleDarkMode.textContent = document.body.classList.contains("dark-mode") ? "☀ Mode clair" : "🌙 Mode sombre";
+});
+
 });
