@@ -251,6 +251,12 @@ body {
   }
   
   /* Correction du mode sombre */
+  /* Dégradé en mode sombre */
+.dark-mode .hero {
+  background: linear-gradient(135deg, #3a0ca3, #7209b7);
+}
+
+
 .dark-mode #skills {
   background-color: #222;  /* Fond sombre */
   color: white;  /* Texte blanc */
