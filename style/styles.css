@@ -328,4 +328,28 @@ body {
     .menu-toggle {
         display: block;
     }
+    
+    #projects .row {
+        flex-direction: column;
+        align-items: center;
+      }
+  
+    #projects .col-md-4 {
+        width: 90%;
+        margin-bottom: 20px;
+      }
+    form {
+        width: 100%;
+        padding: 15px;
+    }
+
+    form .form-control {
+        font-size: 16px;
+    }
+
+    form .btn {
+        padding: 12px;
+        font-size: 18px;
+    }
 }
+  
