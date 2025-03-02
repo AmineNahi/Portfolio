@@ -35,5 +35,8 @@ document.addEventListener("DOMContentLoaded", function () {
     document.body.classList.toggle("dark-mode");
     toggleDarkMode.textContent = document.body.classList.contains("dark-mode") ? "☀ Mode clair" : "🌙 Mode sombre";
 });
+document.querySelector('.menu-toggle').addEventListener('click', function() {
+    document.querySelector('.nav').classList.toggle('active');
+});
 
 });

@@ -310,12 +310,22 @@ body {
 
   /* Responsive */
   @media (max-width: 768px) {
-    #projects .col-md-4 {
-      flex: 1 1 calc(100% - 20px);
+    .nav {
+        display: none;
+        flex-direction: column;
+        background: #333;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        padding: 20px;
     }
-  
-    .hero h1 {
-      font-size: 2.5rem;
+
+    .nav.active {
+        display: flex;
     }
-  }
-  
+
+    .menu-toggle {
+        display: block;
+    }
+}
