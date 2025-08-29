@@ -319,6 +319,48 @@ body {
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
 }
 
+.about-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  line-height: 1.6;
+}
+
+.about-card ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.about-card li {
+  margin-bottom: 10px;
+}
+
+.about-card .highlight {
+  background: #f8f9fa;
+  padding: 15px;
+  border-left: 4px solid #6a11cb;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+/* Section À propos en mode sombre */
+.dark-mode #about {
+  background-color: #222; /* fond sombre */
+  color: white; /* texte blanc */
+}
+
+.dark-mode #about .about-card {
+  background: #2a2a2a; /* fond de la carte */
+  color: white; /* texte blanc */
+  border: 1px solid #444; /* pour bien délimiter */
+}
+
+.dark-mode #about .about-card .highlight {
+  background: #333; /* fond pour la partie mise en avant */
+  border-left: 4px solid #9d4edd; /* accent violet */
+}
+
+
   /* Responsive */
   @media (max-width: 768px) {
     .nav {
