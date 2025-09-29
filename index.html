@@ -1,164 +1,213 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" data-bs-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portfolio de Nahi Amine - Développeur Full Stack passionné par l'innovation numérique. Découvrez mes projets en Flutter, C++, et Web.">
-  <meta name="keywords" content="Portfolio, Développeur, Flutter, C++, JavaScript, Web">
+  <meta name="description" content="Portfolio de Nahi Amine - Développeur Full Stack spécialisé en Flutter, C++ et création de sites vitrine modernes. Boostez votre présence numérique dès aujourd'hui.">
+  <meta name="keywords" content="Portfolio, Développeur, Flutter, C++, JavaScript, Web, React, Site vitrine, BUT Informatique">
   <meta name="author" content="Nahi Amine">
-  <meta property="og:title" content="Portfolio - Nahi Amine">
-  <meta property="og:description" content="Découvrez mes projets et compétences en développement.">
+  
+  <meta property="og:title" content="Nahi Amine | Développeur Full Stack & Créateur de sites web">
+  <meta property="og:description" content="Découvrez mes projets et compétences en développement Full Stack. Je cherche mes 3 premiers clients !">
   <meta property="og:image" content="images/preview.png">
   <meta property="og:url" content="https://nahi-amine-portfolio.com">
-  <title>Portfolio - Nahi Amine</title>
-  <link rel="stylesheet" href="style/styles.css">
+  <meta property="og:type" content="website">
+
+  <title>Nahi Amine | Développeur Full Stack & Sites Web Modernes</title>
+  
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-  <link rel="preload" href="style/styles.css" as="style">
-  <link rel="preload" href="js/script.js" as="script">
+  <link rel="stylesheet" href="style/styles.css"> <link rel="preload" href="js/script.js" as="script">
   <link rel="icon" type="image/jpeg" sizes="32x32" href="images/favicon.jpeg">
 
 </head>
-<body>
-  <header class="bg-dark text-white p-3">
-    <nav class="container d-flex justify-content-between">
-      <h2>Nahi Amine</h2>
-      <ul class="nav">
-        <li class="nav-item"><a href="#skills" class="nav-link text-white">Compétences</a></li>
-        <li class="nav-item"><a href="#projects" class="nav-link text-white">Projets</a></li>
-        <li class="nav-item"><a href="#about" class="nav-link text-white">À propos</a></li>
-        <li class="nav-item"><a href="#contact" class="nav-link text-white">Contact</a></li>
-      </ul>
-      <button id="dark-mode-toggle" class="btn btn-outline-light">🌙 Mode sombre</button>
-
+<body class="bg-light text-dark"> <header class="bg-dark text-white sticky-top shadow-sm" role="banner">
+    <nav class="container navbar navbar-expand-lg">
+        <a class="navbar-brand text-white fw-bold fs-4" href="#">Nahi Amine</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+                <li class="nav-item"><a href="#skills" class="nav-link text-white mx-2">Compétences</a></li>
+                <li class="nav-item"><a href="#projects" class="nav-link text-white mx-2">Projets</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link text-white mx-2">À propos</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link text-white mx-2">Contact</a></li>
+                <li class="nav-item ms-lg-3">
+                  <button id="dark-mode-toggle" class="btn btn-outline-light" aria-label="Activer/Désactiver le mode sombre">
+                    <span class="dark-mode-icon">🌙</span> </button>
+                </li>
+            </ul>
+        </div>
     </nav>
   </header>
 
-  <section class="hero text-center text-white d-flex flex-column justify-content-center align-items-center">
-    <h1 class="display-4">Bonjour, je suis <span class="fw-bold">Nahi Amine</span></h1>
-    <p class="lead">Développeur Full Stack | Passionné par l'innovation numérique</p>
-    <a href="#projects" class="btn btn-primary btn-lg mt-3">Voir mes projets</a>
-  </section>
-  
+  <main>
+    <section class="hero text-center text-dark d-flex flex-column justify-content-center align-items-center bg-primary bg-opacity-75 p-5" style="min-height: 80vh;">
+      <div class="container my-5 text-white">
+        <h1 class="display-3 fw-bolder mb-3">Bonjour, je suis <span class="text-warning">Nahi Amine</span></h1>
+        <p class="lead mb-4 fs-5">Développeur **Full Stack** | Passionné par l'innovation numérique et la création de sites **modernes**.</p>
+        <a href="#projects" class="btn btn-light btn-lg shadow-lg">🚀 Découvrir mes réalisations</a>
+      </div>
+    </section>
+    
+    <hr class="featurette-divider">
 
-  <section id="skills" class="container my-5">
-    <h2>Compétences</h2>
-    <div class="row">
-      <div class="col-md-3">HTML5</div>
-      <div class="col-md-3">CSS3</div>
-      <div class="col-md-3">JavaScript</div>
-      <div class="col-md-3">Python</div>
-      <div class="col-md-3"> Flutter</div>
+    <section id="skills" class="container my-5 py-5">
+      <h2 class="text-center mb-5 display-5 fw-bold">Compétences & Technologies</h2>
+      <div class="row text-center">
+        <ul class="list-unstyled d-flex flex-wrap justify-content-center">
+            <li class="col-6 col-md-4 col-lg-2 p-3"><div class="shadow-sm p-3 rounded bg-white">**HTML5**</div></li>
+            <li class="col-6 col-md-4 col-lg-2 p-3"><div class="shadow-sm p-3 rounded bg-white">**CSS3/Bootstrap**</div></li>
+            <li class="col-6 col-md-4 col-lg-2 p-3"><div class="shadow-sm p-3 rounded bg-white">**JavaScript**</div></li>
+            <li class="col-6 col-md-4 col-lg-2 p-3"><div class="shadow-sm p-3 rounded bg-white">**Python/Flask**</div></li>
+            <li class="col-6 col-md-4 col-lg-2 p-3"><div class="shadow-sm p-3 rounded bg-white">**Flutter/Dart**</div></li>
+            <li class="col-6 col-md-4 col-lg-2 p-3"><div class="shadow-sm p-3 rounded bg-white">**C++**</div></li>
+        </ul>
+      </div>
+    </section>
+    
+    <hr class="featurette-divider">
+
+    <section id="projects" class="container my-5 py-5">
+      <h2 class="text-center mb-5 display-5 fw-bold">Projets Récents</h2>
+      <div class="row g-4 mt-4">
+        
+        <div class="col-md-6 col-lg-3">
+          <article class="card h-100 shadow-lg border-0">
+            <img src="images/Pacman-game.png" class="card-img-top" alt="Jeu Pac-Man revisité en C++">
+            <div class="card-body d-flex flex-column">
+              <h3 class="card-title fs-5">Jeu revisité de Pac-Man</h3>
+              <p class="card-text text-muted">Un jeu original en C++ : incarnez Pac-Man, ramassez des boules pour les utiliser comme projectiles et détruire les fantômes.</p>
+              <p class="mt-auto mb-2"><span class="badge bg-secondary">C++</span></p>
+              <a href="https://github.com/AmineNahi/PacMan_game" target="_blank" class="btn btn-outline-primary btn-sm mt-2">Voir sur GitHub</a>
+            </div>
+          </article>
+        </div>
+        
+        <div class="col-md-6 col-lg-3">
+          <article class="card h-100 shadow-lg border-0">
+            <img src="images/Portfolio.png" class="card-img-top" alt="Site Portfolio avec Flask">
+            <div class="card-body d-flex flex-column">
+              <h3 class="card-title fs-5">Portfolio Dynamique (V1)</h3>
+              <p class="card-text text-muted">Site portfolio personnel avec animations et gestion de formulaire via un back-end **Flask** (Python).</p>
+              <p class="mt-auto mb-2"><span class="badge bg-secondary">Python/Flask</span> <span class="badge bg-secondary">HTML/CSS/JS</span></p>
+              <a href="https://github.com/AmineNahi/Portfolio" target="_blank" class="btn btn-outline-primary btn-sm mt-2">Voir sur GitHub</a>
+            </div>
+          </article>
+        </div>
+        
+        <div class="col-md-6 col-lg-3">
+          <article class="card h-100 shadow-lg border-0">
+            <img src="images/flutter_app.png" class="card-img-top" alt="Application mobile de gestion de projet en Flutter">
+            <div class="card-body d-flex flex-column">
+              <h3 class="card-title fs-5">Gestion de Projet (Flutter)</h3>
+              <p class="card-text text-muted">Application mobile pour gérer des projets par catégorie avec un cahier des charges intégré. Organisation optimale.</p>
+              <p class="mt-auto mb-2"><span class="badge bg-secondary">Flutter</span> <span class="badge bg-secondary">Dart</span></p>
+              <a href="https://github.com/AmineNahi/CodeBrief" target="_blank" class="btn btn-outline-primary btn-sm mt-2">Voir sur GitHub</a>
+            </div>
+          </article>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <article class="card h-100 shadow-lg border-0">
+            <img src="images/sunne-sport.png" class="card-img-top" alt="Site web Sunne-Sport pour un tournoi e-sport">
+            <div class="card-body d-flex flex-column">
+              <h3 class="card-title fs-5">Sunne-Sport</h3>
+              <p class="card-text text-muted">Site web pour organiser un tournoi e-sport (inscriptions, suivi des matchs et communication). Projet d'équipe.</p>
+              <p class="mt-auto mb-2"><span class="badge bg-secondary">PHP</span> <span class="badge bg-secondary">HTML/CSS/JS</span></p>
+              <a href="https://github.com/AmineNahi/Sunne-Sport" target="_blank" class="btn btn-outline-primary btn-sm mt-2">Voir sur GitHub</a>
+            </div>
+          </article>
+        </div>
+        
+      </div>
+    </section>
+
+    <hr class="featurette-divider">
+
+    <section id="about" class="container my-5 py-5">
+      <h2 class="text-center mb-5 display-5 fw-bold">Mon Profil & Mes Services</h2>
+      <div class="row align-items-center">
+        <div class="col-lg-6 mb-4 mb-lg-0">
+            <div class="p-4 bg-light rounded shadow-lg h-100">
+                <p class="fs-5"><strong>Étudiant en BUT Informatique</strong>, je me spécialise dans la création de sites vitrine modernes et sur-mesure pour les **artisans, indépendants et petites entreprises**.</p>
+                <p>Je suis le développeur qu'il vous faut si vous souhaitez :</p>
+                <ul class="list-group list-group-flush mb-4">
+                  <li class="list-group-item bg-light">✅ Un site rapide, **responsive** et parfait sur mobile.</li>
+                  <li class="list-group-item bg-light">✅ Une vitrine professionnelle qui attire de **nouveaux clients**.</li>
+                  <li class="list-group-item bg-light">✅ Un site **optimisé pour le référencement (SEO)**.</li>
+                </ul>
+                <p>Je maîtrise les technologies actuelles : **HTML, CSS, JavaScript, React** pour le front, et **Python (Flask)** pour le back.</p>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="p-4 bg-primary text-white rounded shadow-lg offer-card">
+              <h3 class="fw-bold mb-3 text-center">✨ Offre Spéciale Nouveaux Clients ✨</h3>
+              <p class="lead text-center">Je cherche mes **3 premiers clients motivés** !</p>
+              <p class="text-center">En échange de votre confiance, je vous propose des **tarifs préférentiels** et un suivi personnalisé de A à Z.</p>
+              <div class="text-center mt-4">
+                <a href="#contact" class="btn btn-warning btn-lg fw-bold">👉 Je veux cette offre !</a>
+              </div>
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="featurette-divider">
+
+
+    <section id="contact" class="container my-5 py-5">
+      <h2 class="text-center mb-5 display-5 fw-bold">Me Contacter</h2>
+      <p class="text-center lead mb-4">Intéressé par une collaboration ? N'hésitez pas à me contacter pour un devis ou une opportunité.</p>
+    
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <form action="https://formspree.io/f/mzzdgdqz" method="POST" class="p-4 rounded shadow-lg bg-white">
+            <div class="row">
+                <div class="mb-3 col-md-6">
+                  <label for="name" class="form-label">Nom</label>
+                  <input type="text" class="form-control" id="name" name="Nom" placeholder="Votre nom" required>
+                </div>
+            
+                <div class="mb-3 col-md-6">
+                  <label for="prenom" class="form-label">Prénom</label>
+                  <input type="text" class="form-control" id="prenom" name="Prénom" placeholder="Votre prénom" required>
+                </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" name="Email" placeholder="votre.email@exemple.com" required>
+            </div>
+        
+            <div class="mb-3">
+              <label for="sujet" class="form-label">Sujet</label>
+              <input type="text" class="form-control" id="sujet" name="Sujet" placeholder="Demande de devis, Offre d'emploi, etc.">
+            </div>
+        
+            <div class="mb-4">
+              <label for="message" class="form-label">Message</label>
+              <textarea class="form-control" id="message" name="Message" rows="5" placeholder="Décrivez votre projet ou votre demande..." required></textarea>
+            </div>
+        
+            <input type="hidden" name="_subject" value="Nouveau message depuis le portfolio de Nahi Amine">
+            <input type="hidden" name="_captcha" value="false">
+        
+            <button type="submit" class="btn btn-primary btn-lg w-100 fw-bold">Envoyer votre message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+  <footer class="bg-dark text-white text-center p-4 mt-5">
+    <div class="container">
+      <p class="mb-0">© 2024 Nahi Amine. Tous droits réservés.</p>
     </div>
-  </section>
-
-  <section id="projects" class="container my-5">
-    <h2 class="text-center">Projets</h2>
-    <div class="row mt-4">
-      <!-- Projet 1 - Jeu revisité de Pac-Man -->
-      <div class="col-md-4">
-        <img src="images/Pacman-game.png" alt="Jeu Pac-Man" class="img-fluid rounded">
-        <h3>Jeu revisité de Pac-Man</h3>
-        <p>Un jeu original en C++ où vous incarnez Pac-Man, ramassez des boules pour les utiliser comme projectiles et détruire les fantômes tout en les évitant.</p>
-        <p><strong>Technologies :</strong> C++</p>
-        <a href="https://github.com/AmineNahi/PacMan_game" target="_blank" class="btn btn-primary">GitHub</a>
-      </div>
-  
-      <!-- Projet 2 - Portfolio Dynamique -->
-      <div class="col-md-4">
-        <img src="images/Portfolio.png" alt="Projet 2" class="img-fluid rounded">
-        <h3>Portfolio Dynamique</h3>
-        <p>Site portfolio avec animations et back-end Flask.</p>
-        <a href="https://github.com/AmineNahi/Portfolio" target="_blank" class="btn btn-primary">GitHub</a>
-      </div>
-  
-      <!-- Projet 3 - Appli Flutter de Gestion de Projet -->
-      <div class="col-md-4">
-        <img src="images/flutter_app.png" alt="Gestion de Projet" class="img-fluid rounded">
-        <h3>Gestion de Projet (Flutter)</h3>
-        <p>Application de gestion de projet par catégorie avec un cahier des charges intégré pour une meilleure répartition des tâches et une organisation optimale.</p>
-        <p><strong>Technologies :</strong> Flutter, Dart</p>
-        <a href="https://github.com/AmineNahi/CodeBrief" target="_blank" class="btn btn-primary">GitHub</a>
-      </div>
-
-       <!-- Projet 4 - Sunne-Sport -->
-      <div class="col-md-4  ">
-        <img src="images/sunne-sport.png" alt="Site Sunne-Sport" class="img-fluid">
-        <h3 class="mt-3">Sunne-Sport</h3>
-        <p>Site web conçu pour organiser un tournoi e-sport à l’IUT d’Aix-en-Provence. Il gérait les inscriptions, le suivi des matchs et la communication de l’événement.</p>
-        <p><strong>Technologies :</strong> HTML, CSS, JavaScript, PHP</p>
-        <a href="https://github.com/AmineNahi/Sunne-Sport" target="_blank" class="btn btn-primary">GitHub</a>
-      </div>
-    </div>
-  </section>
-  
-
-  <section id="about" class="container my-5">
-  <h2 class="text-center">À propos</h2>
-  <div class="about-card p-4 mt-4">
-    <p><strong>Étudiant en BUT Informatique</strong>, je me spécialise dans la création de sites vitrine modernes et sur-mesure pour les artisans, indépendants et petites entreprises.</p>
-
-    <p>Vous souhaitez :</p>
-    <ul>
-      <li>✅ Un site rapide et qui s'affiche parfaitement sur mobile ?</li>
-      <li>✅ Une vitrine professionnelle pour attirer de nouveaux clients ?</li>
-      <li>✅ Moderniser un site existant qui ne vous représente plus ?</li>
-    </ul>
-
-    <p>Je maîtrise les technologies actuelles (<strong>HTML, CSS, JavaScript, React</strong>) pour vous livrer un site web à votre image, optimisé pour le référencement (SEO).</p>
-
-    <p class="highlight mt-3">✨ Je cherche mes <strong>3 premiers clients motivés</strong> ! ✨<br>
-    En échange de votre confiance, je vous propose des tarifs préférentiels et un suivi personnalisé.</p>
-
-    <div class="text-center mt-4">
-      <a href="#contact" class="btn btn-primary btn-lg">📩 Me contacter</a>
-    </div>
-  </div>
-</section>
-
-  <section id="contact" class="container my-5">
-    <h2 class="text-center">Contact</h2>
-    <p class="text-center">N'hésitez pas à me contacter pour toute question ou opportunité professionnelle.</p>
-  
-    <form action="https://formspree.io/f/mzzdgdqz" method="POST" class="contact-form mt-4">
-      <div class="mb-3">
-        <label for="name" class="form-label">Nom</label>
-        <input type="text" class="form-control" id="name" name="name" placeholder="Votre nom" required>
-      </div>
-  
-      <div class="mb-3">
-        <label for="prenom" class="form-label">Prénom</label>
-        <input type="text" class="form-control" id="prenom" name="prenom" placeholder="Votre prénom" required>
-      </div>
-  
-      <div class="mb-3">
-        <label for="email" class="form-label">Email</label>
-        <input type="email" class="form-control" id="email" name="email" placeholder="Votre email" required>
-      </div>
-  
-      <div class="mb-3">
-        <label for="sujet" class="form-label">Sujet</label>
-        <input type="text" class="form-control" id="sujet" name="sujet" placeholder="Sujet de votre message">
-      </div>
-  
-      <div class="mb-3">
-        <label for="message" class="form-label">Message</label>
-        <textarea class="form-control" id="message" name="message" rows="4" placeholder="Votre message" required></textarea>
-      </div>
-  
-      <input type="hidden" name="_subject" value="Nouveau message depuis le portfolio">
-      <input type="hidden" name="_captcha" value="false"> <!-- Désactive le captcha Formspree -->
-  
-      <button type="submit" class="btn btn-primary w-100">Envoyer</button>
-    </form>
-  </section>
-  
-
-
-
-  <footer class="bg-dark text-white text-center p-3">
-    © 2024 Nahi Amine. Tous droits réservés.
   </footer>
 
-  <script src="js/script.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js" defer></script> 
 </body>
 </html>
