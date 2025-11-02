@@ -1,263 +1,408 @@
-/* ======================================= */
-/* 1. Styles de base & Réinitialisation    */
-/* ======================================= */
-
+/* Styles de base */
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* Transition pour une bascule fluide entre les thèmes */
-    transition: background-color 0.3s, color 0.3s; 
-}
-
-h1, h2, h3 {
+  }
+  
+  h1, h2, h3 {
     margin: 0 0 20px;
-}
-
-/* ======================================= */
-/* 2. Header & Navigation (Fixé)           */
-/* ======================================= */
-
-header {
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-/* Effet de survol modernisé pour les liens de navigation */
-.nav-link.text-white:hover {
-    color: var(--bs-warning) !important; /* Couleur d'accentuation (Jaune/Orange) */
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 5px;
-}
-
-/* ======================================= */
-/* 3. Section Héro (Impact Visuel)         */
-/* ======================================= */
-
-.hero {
-    /* Dégradé violet/bleu comme accent fort */
-    background: linear-gradient(135deg, var(--bs-primary), #2575fc) !important; 
-    padding: 100px 20px; 
-}
-
-.hero h1 {
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
-}
-
-/* Bouton Light pour bien contraster */
-.hero .btn-light {
-    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
-}
-
-.hero .btn-light:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3) !important;
-}
-
-
-/* ======================================= */
-/* 4. Section Compétences                  */
-/* ======================================= */
-
-#skills {
-    padding: 80px 0;
-}
-
-/* Style des "bulles" de compétences (UL LI DIV) */
-#skills .list-unstyled li div {
-    height: 100%; 
+  }
+  
+  p {
+    margin: 0 0 20px;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* Header */
+  header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #333; /* Même couleur que sur PC */
+    color: white;
+    padding: 10px 0;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  header h2 {
+    font-size: 24px;
+  }
+  
+  .nav {
     display: flex;
-    justify-content: center;
+    justify-content: center; /* Centrer les liens */
     align-items: center;
-    font-weight: bold;
-    border: 1px solid var(--bs-gray-300); 
-    transition: all 0.3s;
-    font-size: 1rem;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  } 
+  
+  .nav-link {
+    color: white;
+    font-size: 18px;
+    padding: 10px 15px;
+    transition: color 0.3s, background 0.3s;
+    border-radius: 5px;
+  }
+  
+  .nav-link:hover {
+    color: #00bcd4;
+    background: rgba(255, 255, 255, 0.2);
+}
+  
+  .dark-mode {
+    background-color: #121212;
+    color: white;
 }
 
-#skills .list-unstyled li div:hover {
+.dark-mode .bg-dark {
+    background-color: #222 !important;
+}
+
+  /* Section Accueil */
+/* Section Accueil avec dégradé violet */
+.hero {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;  /* Assurer la lisibilité */
+  padding: 20px;
+}
+
+/* Effet de texte plus visible */
+.hero h1 {
+  font-size: 3rem;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.hero p {
+  font-size: 1.5rem;
+  opacity: 0.9;
+}
+
+/* Bouton bien visible sur le dégradé */
+.hero .btn-primary {
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 2px solid white;
+  color: white;
+  padding: 12px 25px;
+  font-size: 20px;
+  border-radius: 5px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.hero .btn-primary:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+  transform: scale(1.05);
+}
+
+
+  /* Section Compétences */
+  #skills {
+    background-color: white;
+    padding: 50px 0;
+  }
+  
+  #skills h2 {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  #skills .row {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+  }
+  
+  #skills .col-md-3 {
+    flex: 1;
+    margin: 10px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: transform 0.3s;
+  }
+  
+  #skills .col-md-3:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Section Projets */
+  #projects {
+    padding: 50px 0;
+  }
+  
+  #projects h2 {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  #projects .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  #projects .col-md-4 {
+    flex: 0 0 calc(33.333% - 20px);
+    max-width: calc(33.333% - 20px);
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+  }
+  
+  #projects .col-md-4 img {
+    width: 100%;
+    border-radius: 8px;
+  }
+  
+  #projects .col-md-4:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15) !important;
-    border-color: var(--bs-primary);
-}
-
-
-/* ======================================= */
-/* 5. Section Projets (Cartes Modernes)    */
-/* ======================================= */
-
-#projects {
-    padding: 80px 0;
-}
-
-.card {
-    border-radius: 10px;
-    overflow: hidden; 
+  }
+  
+  #projects .col-md-4 {
+    margin-bottom: 30px;
+  }
+  
+  #projects .img-fluid {
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  #projects .img-fluid:hover {
+    transform: scale(1.05);
+  }
+  
+  .project-card {
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-.card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15) !important;
-}
-
-.card-img-top {
-    height: 180px; 
-    object-fit: cover; 
-}
-
-
-/* ======================================= */
-/* 6. Section À Propos (Mise en Avant)     */
-/* ======================================= */
-
-#about {
-    padding: 80px 0;
-}
-
-/* Style de l'offre spéciale (la carte bleue/primaire) */
-.offer-card {
-    border-radius: 10px;
-    background: linear-gradient(45deg, var(--bs-primary), var(--bs-info)) !important;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-
-.offer-card .btn-warning {
-    transition: transform 0.2s;
-}
-
-.offer-card .btn-warning:hover {
+.project-card:hover {
     transform: scale(1.05);
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
 }
 
 
-/* ======================================= */
-/* 7. Section Contact & Formulaire         */
-/* ======================================= */
-
-#contact {
-    padding: 80px 0;
-}
-
-.contact-form {
-    border: 1px solid var(--bs-gray-300);
-    border-radius: 10px;
-}
-
-.contact-form .form-control {
-    transition: all 0.3s;
-}
-
-.contact-form .form-control:focus {
-    border-color: var(--bs-primary);
-    box-shadow: 0 0 0 0.25rem rgba(var(--bs-primary-rgb),.25);
-}
-
-/* ======================================= */
-/* 8. Footer                               */
-/* ======================================= */
-
-footer {
-    padding: 20px 0;
-}
-
-
-/* ======================================= */
-/* 9. Mode Sombre (Adaptation des couleurs)*/
-/* ======================================= */
-
-/* --- THÈMES GÉNERAUX --- */
-[data-bs-theme="dark"] body {
-    background-color: #1a1a1a !important; 
-    color: #f8f9fa !important;
-}
-
-[data-bs-theme="dark"] header {
-    background-color: #2a2a2a !important;
-    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
-}
-
-[data-bs-theme="dark"] .hero {
-    background: linear-gradient(135deg, #3a0ca3, #7209b7) !important;
-}
-
-[data-bs-theme="dark"] .card {
-    background-color: #2a2a2a !important;
-    border-color: #444;
-}
-
-[data-bs-theme="dark"] .card-text {
-    color: #ccc !important; 
-}
-
-/* --- SECTION COMPÉTENCES --- */
-[data-bs-theme="dark"] #skills .list-unstyled li div {
-    background-color: #2a2a2a !important;
-    border-color: #444;
-}
-
-[data-bs-theme="dark"] #skills .list-unstyled li div:hover {
-    background-color: #333 !important;
-    border-color: var(--bs-info);
-}
-
-/* --- SECTION À PROPOS --- */
-/* Cible la carte d'information qui utilise bg-light dans le HTML */
-[data-bs-theme="dark"] #about .p-4.bg-light {
-    background-color: #2a2a2a !important; /* Fond sombre de la carte "À propos" */
-    border-color: var(--bs-info);
-    color: #f8f9fa;
-}
-
-/* CORRECTION : Cible les éléments de liste qui utilisent bg-light */
-[data-bs-theme="dark"] .list-group-item.bg-light {
-    background-color: #2a2a2a !important; /* Fond sombre des <li> */
-    color: #f8f9fa !important; /* Texte blanc des <li> */
-    border-color: #444 !important; /* Lignes de séparation entre les listes */
-}
-
-/* --- SECTION CONTACT (CORRECTION DU CONTENEUR DE FORMULAIRE) --- */
-/* Cible le conteneur du formulaire qui a la classe bg-white */
-[data-bs-theme="dark"] #contact .p-4.rounded.shadow-lg.bg-white {
-    background-color: #2a2a2a !important; /* Fond sombre de la box du formulaire */
-    color: #f8f9fa;
-    border: 1px solid #444; /* Ajout d'une bordure sombre pour la distinction */
-}
-
-/* Cible les champs de saisie (input/textarea) */
-[data-bs-theme="dark"] .contact-form .form-control {
+  .btn {
+    margin-top: 10px;
+  }
+  
+  
+  /* Section Contact */
+  #contact {
+    background-color: white;
+    padding: 50px 0;
+  }
+  
+  #contact h2 {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  form {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  form .form-control {
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid white;
+  }
+  
+  form .btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #6a11cb;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  form .btn:hover {
+    background-color: #2575fc;
+  }
+  
+  /* Footer */
+  footer {
     background-color: #333;
-    border-color: #555;
-    color: #f8f9fa;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+  }
+  
+  footer p {
+    margin: 0;
+  }
+  
+  /* Correction du mode sombre */
+  /* Dégradé en mode sombre */
+.dark-mode .hero {
+  background: linear-gradient(135deg, #3a0ca3, #7209b7);
 }
 
-[data-bs-theme="dark"] .contact-form .form-control::placeholder {
-    color: #ccc;
+
+.dark-mode #skills {
+  background-color: #222;  /* Fond sombre */
+  color: white;  /* Texte blanc */
+}
+
+/* Rendre les cartes des compétences visibles en mode sombre */
+.dark-mode #skills .col-md-3 {
+  background-color: #333;  /* Fond des cartes */
+  color: white;  /* Texte */
+  border: 1px solid #444;  /* Légère bordure pour contraste */
+}
+
+/* Effet au survol pour plus de dynamisme */
+.dark-mode #skills .col-md-3:hover {
+  background-color: #444;
+  transform: scale(1.05);
+}
+.dark-mode #projects,
+.dark-mode #contact {
+    background-color: #222;  /* Fond sombre */
+    color: white;  /* Texte blanc */
+}
+
+/* Bordures et champs en mode sombre */
+.dark-mode form .form-control {
+    background-color: #333;  
+    border: 1px solid #555; 
+    color: white;
+}
+
+/* Boutons */
+.dark-mode form .btn {
+    background-color: #00bcd4;  
+    color: white;
+}
+
+.dark-mode form .btn:hover {
+    background-color: #007bff;
+}
+
+/* Projets en mode sombre */
+.dark-mode #projects .col-md-4 {
+    background-color: #333;
+    color: white;
+}
+
+/* Bordures */
+.dark-mode #projects .img-fluid {
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+}
+
+.about-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  line-height: 1.6;
+}
+
+.about-card ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.about-card li {
+  margin-bottom: 10px;
+}
+
+.about-card .highlight {
+  background: #f8f9fa;
+  padding: 15px;
+  border-left: 4px solid #6a11cb;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+/* Section À propos en mode sombre */
+.dark-mode #about {
+  background-color: #222; /* fond sombre */
+  color: white; /* texte blanc */
+}
+
+.dark-mode #about .about-card {
+  background: #2a2a2a; /* fond de la carte */
+  color: white; /* texte blanc */
+  border: 1px solid #444; /* pour bien délimiter */
+}
+
+.dark-mode #about .about-card .highlight {
+  background: #333; /* fond pour la partie mise en avant */
+  border-left: 4px solid #9d4edd; /* accent violet */
 }
 
 
-/* ======================================= */
-/* 10. Responsive (Mobile)                 */
-/* ======================================= */
+  /* Responsive */
+  @media (max-width: 768px) {
+    .nav {
+        flex-wrap: wrap; /* Permet de passer en colonne si manque de place */
+        justify-content: center;
+      }
+  
+    .nav-link {
+        font-size: 16px;
+        padding: 8px 12px;
+    }
 
-@media (max-width: 991.98px) {
-    .hero {
-        min-height: 50vh !important;
-        padding: 50px 10px;
+    .nav.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
     }
     
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-    
-    /* Cache le nom pour laisser de la place au bouton toggler */
-    header .navbar-brand {
-        font-size: 20px !important;
+    #projects .row {
+        flex-direction: column;
+        align-items: center;
+      }
+  
+    #projects .col-md-4 {
+        width: 90%;
+        margin-bottom: 20px;
+      }
+    form {
+        width: 100%;
+        padding: 15px;
     }
 
-    /* Ajuster l'ombre pour éviter l'effet "gros" sur mobile */
-    .card:hover {
-        transform: none;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1) !important;
+    form .form-control {
+        font-size: 16px;
+    }
+
+    form .btn {
+        padding: 12px;
+        font-size: 18px;
     }
 }
+  
