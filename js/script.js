@@ -1,9 +1,31 @@
 document.addEventListener("DOMContentLoaded", function () {
     const form = document.querySelector(".contact-form");
-  
-    // 1. Gestion du formulaire de contact (Formspree)
+    const toggleDarkMode = document.getElementById("dark-mode-toggle");
+    const nav = document.querySelector('.nav');
+    const menuToggle = document.querySelector('.menu-toggle');
+    
+    // --- 0. Détection des préférences utilisateur et initialisation ---
+    if (toggleDarkMode) {
+        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        
+        // Initialisation du thème basé sur la préférence système
+        if (prefersDark) {
+            document.body.classList.add('dark-mode');
+            toggleDarkMode.innerHTML = "☀️ Mode clair"; 
+        } else {
+            toggleDarkMode.innerHTML = "🌙 Mode sombre";
+        }
+
+        // 1. Gestion du Mode Sombre (Manuel)
+        toggleDarkMode.addEventListener("click", function () {
+            document.body.classList.toggle("dark-mode");
+            toggleDarkMode.innerHTML = document.body.classList.contains("dark-mode") ? "☀️ Mode clair" : "🌙 Mode sombre";
+        });
+    }
+
+    // --- 2. Gestion du formulaire de contact (Formspree) ---
     if (!form) {
-        console.error("Formulaire non trouvé ! Vérifiez que vous avez bien ajouté la classe 'contact-form' à votre <form>.");
+        console.error("Formulaire non trouvé...");
     } else {
         form.addEventListener("submit", async function (event) {
             event.preventDefault(); 
@@ -31,30 +53,13 @@ document.addEventListener("DOMContentLoaded", function () {
                 alert("Erreur réseau. Vérifiez votre connexion.");
                 console.error(error);
             } finally {
-                // Rétablir le bouton
                 submitButton.textContent = originalText;
                 submitButton.disabled = false;
             }
         });
     }
 
-    // 2. Gestion du Mode Sombre
-    const toggleDarkMode = document.getElementById("dark-mode-toggle");
-    if (toggleDarkMode) {
-        toggleDarkMode.addEventListener("click", function () {
-            document.body.classList.toggle("dark-mode");
-            toggleDarkMode.innerHTML = document.body.classList.contains("dark-mode") ? "☀️ Mode clair" : "🌙 Mode sombre";
-        });
-        
-        // Initialisation basée sur la préférence système (optionnel)
-        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            // document.body.classList.add('dark-mode'); // Décommenter si vous voulez initialiser en mode sombre selon l'OS
-        }
-    }
-
-    // 3. Gestion du Menu Hamburger (Mobile)
-    const menuToggle = document.querySelector('.menu-toggle');
-    const nav = document.querySelector('.nav');
+    // --- 3. Gestion du Menu Hamburger (Ouverture/Fermeture) ---
     if (menuToggle && nav) {
         menuToggle.addEventListener('click', function() {
             nav.classList.toggle('active');
@@ -69,5 +74,4 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         });
     }
-  
 });

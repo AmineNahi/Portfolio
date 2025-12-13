@@ -5,7 +5,7 @@ body {
     padding: 0;
     box-sizing: border-box;
     line-height: 1.6;
-    background-color: #f4f7f6; /* Fond très léger pour un look plus doux */
+    background-color: #f4f7f6;
     color: #333;
     transition: background-color 0.3s, color 0.3s;
 }
@@ -20,7 +20,7 @@ p {
 }
 
 section {
-    padding: 6rem 0; /* Plus d'espace entre les sections */
+    padding: 6rem 0;
 }
 
 .container {
@@ -39,6 +39,7 @@ header {
     color: #333;
     padding: 0.8rem 0;
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08); 
+    transition: background-color 0.3s, box-shadow 0.3s;
 }
 
 header h2 {
@@ -52,44 +53,52 @@ header h2 {
     align-items: center;
 }
 
+/* ⚠️ MOBILE PAR DÉFAUT : Le menu est masqué et positionné pour être déroulé */
 .nav {
-    display: flex;
-    gap: 1.5rem;
-    list-style: none;
+    display: none; /* Caché par défaut */
+    flex-direction: column;
+    position: absolute;
+    top: 100%; 
+    left: 0;
+    width: 100%;
+    background-color: #ffffff; 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
     padding: 0;
+    list-style: none;
     margin: 0;
-    transition: transform 0.3s ease-in-out;
+    z-index: 999;
 } 
+
+/* Le menu est affiché uniquement lorsque le JavaScript ajoute la classe 'active' */
+.nav.active {
+    display: flex; 
+}
+
 .nav-item {
     padding: 0;
+    text-align: center;
+    width: 100%;
+    border-bottom: 1px solid #eee;
 }
 
 .nav-link {
     color: #333;
     font-size: 1rem;
-    padding: 0.5rem 0.7rem;
+    padding: 1rem 0;
     position: relative;
-    transition: color 0.3s;
+    display: block;
+    transition: color 0.3s, background-color 0.3s;
 }
 
 .nav-link:hover {
     color: #6a11cb;
-}
-/* Soulignement animé */
-.nav-link::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 3px;
-    bottom: -5px;
-    left: 0;
-    background-color: #6a11cb;
-    transition: width 0.3s ease-in-out;
+    background-color: #f8f8f8;
 }
 
-.nav-link:hover::after {
-    width: 100%;
+.nav-link::after {
+    display: none; /* Le soulignement n'est pas utilisé en mode hamburger */
 }
+
 
 /* Bouton Dark Mode */
 #dark-mode-toggle {
@@ -109,9 +118,9 @@ header h2 {
     color: white;
 }
 
-/* --- Menu Hamburger (Mobile Only) --- */
+/* --- Menu Hamburger (Visibilité mobile) --- */
 .menu-toggle {
-    display: none; 
+    display: block; /* ⚠️ Toujours visible sur mobile */
     font-size: 1.8rem;
     background: none;
     border: none;
@@ -119,11 +128,17 @@ header h2 {
     color: #333; 
     padding: 0.5rem;
     margin-left: 0.5rem;
-    line-height: 1; /* Empêche les décalages */
+    line-height: 1;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 
-/* --- Section Accueil (Hero) --- */
+/* --- Section Accueil (Hero) - Centrage Fixé --- */
 .hero {
     background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
     min-height: 100vh; 
@@ -145,7 +160,8 @@ header h2 {
     font-size: 1.5rem;
     max-width: 800px;
     margin-bottom: 2rem;
-    margin-left: auto;
+    /* Force le centrage du bloc */
+    margin-left: auto; 
     margin-right: auto;
 }
 
@@ -166,7 +182,9 @@ header h2 {
     transform: scale(1.05);
 }
 
-/* --- Sections Générales --- */
+/* --- Sections Générales, Compétences, Projets, Contact, About (Styles et Flexbox/Grid) --- */
+/* (Le reste de votre CSS reste identique, y compris les corrections Projets) */
+
 #skills h2, #projects h2, #about h2, #contact h2 {
     font-size: 2.2rem;
     text-align: center;
@@ -174,20 +192,18 @@ header h2 {
     margin-bottom: 3rem;
 }
 
-/* --- Section Compétences --- */
 #skills {
     background-color: #f4f7f6;
 }
 
 #skills .row {
     display: grid;
-    /* 120px est la taille minimale pour chaque carte de compétence */
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); 
     gap: 1.5rem;
     text-align: center;
 }
   
-.skill-card { /* Remplacé .col-md-3 par .skill-card */
+.skill-card { 
     all: unset; 
     padding: 1.5rem;
     background-color: white;
@@ -206,21 +222,18 @@ header h2 {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-/* --- Section Projets (Correction des bugs de superposition) --- */
 #projects {
     background-color: white;
 }
 
 #projects .row {
     display: grid;
-    /* Assure 3 colonnes sur desktop, 1 ou 2 sur tablette/mobile */
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
     gap: 2rem; 
     justify-content: center;
 }
   
 .project-card {
-    /* Utilisation de Flexbox pour organiser le contenu de chaque carte */
     display: flex;
     flex-direction: column;
     
@@ -253,13 +266,12 @@ header h2 {
 }
 
 .project-card p {
-    flex-grow: 1; /* Permet d'étirer la description */
+    flex-grow: 1;
     margin-bottom: 1rem;
 }
 
-/* Styles du bouton dans la carte */
 .project-card .btn {
-    margin-top: auto; /* Pousse le bouton vers le bas */
+    margin-top: auto;
     display: inline-block;
     width: auto;
     align-self: flex-start; 
@@ -274,18 +286,21 @@ header h2 {
     background-color: #2575fc;
 }
 
-/* --- Section À propos --- */
 #about {
     background-color: #f4f7f6;
 }
 
 .about-card {
-    background: #fff;
-    border-radius: 15px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-    padding: 2.5rem;
-    max-width: 900px;
-    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-sizing: border-box; 
+    width: 100%; 
 }
 
 .about-card ul {
@@ -308,7 +323,6 @@ header h2 {
     color: #4a007c;
 }
 
-/* --- Section Contact --- */
 #contact {
     background-color: white;
 }
@@ -354,7 +368,6 @@ form .btn:hover {
     background-color: #2575fc;
 }
 
-/* --- Footer --- */
 footer {
     background-color: #333;
     color: white;
@@ -367,21 +380,28 @@ footer {
     background-color: #1a1a2e;
     color: #f4f7f6;
 }
-
+/* (Styles Dark Mode pour les éléments internes...) */
 .dark-mode header {
     background-color: #2a2a4a;
     box-shadow: 0 2px 15px rgba(255, 255, 255, 0.05);
 }
-
 .dark-mode header h2, .dark-mode .menu-toggle {
     color: #f4f7f6;
 }
-
+.dark-mode .nav {
+    background-color: #2a2a4a;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+.dark-mode .nav-item {
+    border-bottom: 1px solid #3c3c6e;
+}
 .dark-mode .nav-link {
     color: #f4f7f6;
 }
-/* ... (autres styles dark mode similaires au précédent) ... */
-
+.dark-mode .nav-link:hover {
+    color: #9d4edd;
+    background-color: #3c3c6e;
+}
 
 .dark-mode #skills, .dark-mode #about {
     background-color: #1a1a2e;
@@ -390,7 +410,6 @@ footer {
 .dark-mode #projects, .dark-mode #contact {
     background-color: #1a1a2e;
 }
-
 .dark-mode .skill-card,
 .dark-mode .project-card,
 .dark-mode .about-card {
@@ -403,7 +422,6 @@ footer {
 .dark-mode .skill-card {
     color: #9d4edd;
 }
-
 .dark-mode .about-card .highlight {
     background: #3c3c6e;
     color: #f4f7f6;
@@ -429,68 +447,16 @@ footer {
 }
 
 
-/* --- Responsive (Mobile First Override) --- */
+/* --- Responsive (Basé sur 992px) --- */
 
 @media (max-width: 991px) {
     
     header .header-content {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: nowrap; /* Empêche les sauts de ligne */
+        flex-wrap: nowrap;
     }
 
-    .nav {
-        /* Masqué par défaut sur mobile */
-        display: none; 
-        flex-direction: column;
-        position: absolute;
-        top: 100%; 
-        left: 0;
-        width: 100%;
-        background-color: #ffffff; 
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-        padding: 0;
-        z-index: 999;
-    }
-
-    .dark-mode .nav {
-        background-color: #2a2a4a;
-    }
-
-    .nav.active {
-        display: flex; 
-    }
-
-    .nav-item {
-        text-align: center;
-        width: 100%;
-    }
-
-    .nav-link {
-        display: block; 
-        padding: 1rem 0;
-        border-bottom: 1px solid #eee;
-    }
+    /* Le menu hamburger est déjà affiché par défaut (.menu-toggle: display: block;) */
     
-    .dark-mode .nav-link {
-        border-bottom: 1px solid #3c3c6e;
-    }
-
-    .nav-link::after {
-        display: none; 
-    }
-    
-    .menu-toggle {
-        display: block; 
-    }
-    
-    .controls {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-    }
-
     .hero h1 {
         font-size: 2.2rem;
     }
@@ -501,9 +467,40 @@ footer {
 }
 
 
-/* Pour les tablettes et petits desktops (768px à 991px) */
-@media (min-width: 768px) and (max-width: 991px) {
-    #skills .row {
-        grid-template-columns: repeat(3, 1fr);
+/* 🚀 DESKTOP (992px et plus) : La barre de navigation est affichée en ligne 🚀 */
+@media (min-width: 992px) {
+    
+    /* ⚠️ Masquer le bouton Hamburger sur PC */
+    .menu-toggle {
+        display: none;
+    }
+
+    /* ⚠️ Afficher la barre de navigation complète en ligne sur PC */
+    .nav {
+        display: flex; 
+        flex-direction: row;
+        position: static; /* Retire la position absolue */
+        width: auto;
+        box-shadow: none;
+        background-color: transparent;
+        margin-right: 0;
+        margin-left: 2rem;
+    }
+
+    .nav-item {
+        border-bottom: none; /* Supprime le séparateur vertical */
+        padding: 0;
+    }
+
+    .nav-link {
+        padding: 0.5rem 0.7rem;
+    }
+    
+    .nav-link::after {
+        display: block; /* Réactive le soulignement animé */
+    }
+
+    .dark-mode .nav {
+        background-color: transparent;
     }
 }
