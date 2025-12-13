@@ -1,4 +1,6 @@
-/* Styles de base - Utilisation de rem pour l'accessibilité */
+/* =========================================
+   1. STYLES DE BASE (MODERNE - Police Inter)
+   ========================================= */
 body {
     font-family: 'Inter', sans-serif; 
     margin: 0;
@@ -29,17 +31,18 @@ section {
     margin: 0 auto;
 }
 
-/* --- Header & Navigation --- */
+/* =========================================
+   2. HEADER & NAVIGATION (STYLE CLASSIQUE #333)
+   ========================================= */
 header {
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
-    background-color: #ffffff; 
-    color: #333;
-    padding: 0.8rem 0;
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08); 
-    transition: background-color 0.3s, box-shadow 0.3s;
+    background-color: #333; /* Gris foncé (Ton ancien style) */
+    color: white;
+    padding: 10px 0;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 header h2 {
@@ -54,92 +57,73 @@ header h2 {
     align-items: center;
 }
 
-/* ⚠️ MOBILE PAR DÉFAUT : Menu hamburger classique */
+/* --- NAVIGATION PC PAR DÉFAUT (Desktop First) --- */
+/* C'est ici que le bug est corrigé : on affiche le menu par défaut */
 .nav {
-    display: none; /* Caché par défaut */
-    flex-direction: column;
-    position: absolute;
-    top: 100%; 
-    left: 0;
-    width: 100%;
-    background-color: #ffffff; 
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
     list-style: none;
-    margin: 0;
-    z-index: 999;
-} 
-
-.nav.active {
-    display: flex; 
-}
-
-.nav-item {
     padding: 0;
-    text-align: center;
-    width: 100%;
-    border-bottom: 1px solid #eee;
+    margin: 0;
 }
 
 .nav-link {
-    color: #333;
+    color: white;
     font-size: 1rem;
-    padding: 1rem 0;
+    padding: 10px 15px;
+    transition: color 0.3s, background 0.3s;
+    border-radius: 5px;
     position: relative;
-    display: block;
-    transition: color 0.3s, background-color 0.3s;
+    text-decoration: none;
 }
 
 .nav-link:hover {
-    color: #6a11cb;
-    background-color: #f8f8f8;
+    color: #00bcd4; /* Bleu Cyan */
+    background: rgba(255, 255, 255, 0.2);
 }
 
-.nav-link::after {
-    display: none; 
-}
-
-
-/* Bouton Dark Mode */
-#dark-mode-toggle {
-    background: none;
-    border: 2px solid #6a11cb;
-    color: #6a11cb;
-    padding: 0.5rem 1rem;
-    border-radius: 50px; 
-    cursor: pointer;
-    font-weight: bold;
-    transition: all 0.3s;
-    font-size: 0.9rem;
-    white-space: nowrap;
-}
-
-#dark-mode-toggle:hover {
-    background-color: #6a11cb;
-    color: white;
-}
-
-/* Menu Hamburger (Mobile) */
+/* ⚠️ HAMBURGER CACHÉ PAR DÉFAUT ⚠️ */
+/* Cela garantit qu'il n'est JAMAIS là sur PC */
 .menu-toggle {
-    display: block;
+    display: none; 
     font-size: 1.8rem;
     background: none;
     border: none;
     cursor: pointer;
-    color: #333; 
+    color: white; 
     padding: 0.5rem;
-    margin-left: 0.5rem;
     line-height: 1;
 }
 
+/* Conteneur des boutons */
 .controls {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 15px;
 }
 
+/* Bouton Dark Mode */
+#dark-mode-toggle {
+    background: none;
+    border: 1px solid white;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    white-space: nowrap;
+}
 
-/* --- Section Accueil (Hero) - Code EXACT fourni par toi --- */
+#dark-mode-toggle:hover {
+    background-color: white;
+    color: #333;
+}
+
+/* =========================================
+   3. SECTIONS (HERO MODERNE)
+   ========================================= */
 .hero {
     background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
     min-height: 100vh; 
@@ -161,15 +145,14 @@ header h2 {
     font-size: 1.5rem;
     max-width: 800px;
     margin-bottom: 2rem;
-    /* Force le centrage du bloc */
     margin-left: auto; 
     margin-right: auto;
 }
 
 .hero .btn-primary {
-    background-color: white;
-    border: none;
-    color: #6a11cb;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 2px solid white;
+    color: white;
     padding: 0.8rem 2rem;
     font-size: 1.1rem;
     border-radius: 50px;
@@ -179,12 +162,13 @@ header h2 {
 }
 
 .hero .btn-primary:hover {
-    background-color: #f0f0f0;
+    background-color: rgba(255, 255, 255, 0.4);
     transform: scale(1.05);
 }
 
-
-/* --- Sections Générales --- */
+/* =========================================
+   4. COMPÉTENCES & PROJETS (TON ANCIEN STYLE FLEXBOX)
+   ========================================= */
 #skills h2, #projects h2, #about h2, #contact h2 {
     font-size: 2.2rem;
     text-align: center;
@@ -192,66 +176,80 @@ header h2 {
     margin-bottom: 3rem;
 }
 
-#skills { background-color: #f4f7f6; }
-#skills .row {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); 
-    gap: 1.5rem;
-    text-align: center;
-}
-  
-.skill-card { 
-    all: unset; 
-    padding: 1.5rem;
+/* Compétences */
+#skills {
     background-color: white;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05); 
-    border-radius: 12px;
-    font-weight: 600;
-    transition: transform 0.3s, box-shadow 0.3s;
-    color: #6a11cb;
-    font-size: 1.1rem;
-    border: 1px solid #eee;
-    cursor: default;
+    padding: 50px 0;
 }
-  
-.skill-card:hover {
-    transform: translateY(-5px);
+
+#skills .row {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    flex-wrap: wrap; 
+}
+
+#skills .col-md-3 { /* Utilisation de la classe générique au lieu de .skill-card */
+    flex: 1;
+    margin: 10px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: transform 0.3s;
+    min-width: 150px;
+    /* Pour compatibilité avec ton HTML qui utilise peut-être .skill-card */
+    display: flex; justify-content: center; align-items: center; font-weight: bold; color: #6a11cb; border: 1px solid #eee;
+}
+/* Compatibilité si tu as changé les classes HTML */
+.skill-card {
+    flex: 1; margin: 10px; padding: 20px; background-color: white; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); border-radius: 8px; transition: transform 0.3s; min-width: 150px;
+    display: flex; justify-content: center; align-items: center; font-weight: bold; color: #6a11cb; border: 1px solid #eee;
+}
+
+#skills .col-md-3:hover, .skill-card:hover {
+    transform: scale(1.05);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-#projects { background-color: white; }
+/* Projets */
+#projects {
+    padding: 50px 0;
+    background-color: white;
+}
+
 #projects .row {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-    gap: 2rem; 
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
     justify-content: center;
 }
-  
-.project-card {
-    display: flex;
-    flex-direction: column;
+
+#projects .col-md-4, .project-card {
+    flex: 0 0 calc(33.333% - 20px);
+    max-width: calc(33.333% - 20px);
     background: white;
-    padding: 1.5rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-    box-sizing: border-box; 
-    width: 100%; 
-}
-
-.project-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
-}
-
-.project-card img {
-    width: 100%;
-    height: 200px; 
-    object-fit: cover; 
+    padding: 15px;
     border-radius: 8px;
-    margin-bottom: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    margin-bottom: 30px;
+    display: flex; 
+    flex-direction: column;
 }
-  
+
+#projects .col-md-4 img, .project-card img {
+    width: 100%;
+    border-radius: 8px;
+    height: 200px; object-fit: cover; margin-bottom: 1rem;
+}
+
+#projects .col-md-4:hover, .project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
+}
+
 .project-card h3 { font-size: 1.5rem; color: #333; margin-top: 0; }
 .project-card p { flex-grow: 1; margin-bottom: 1rem; }
 
@@ -265,25 +263,12 @@ header h2 {
     padding: 0.5rem 1rem;
     border-radius: 5px;
     transition: background-color 0.3s;
+    text-decoration: none;
 }
 
 .project-card .btn:hover { background-color: #2575fc; }
 
-#about { background-color: #f4f7f6; }
-.about-card {
-    display: flex; flex-direction: column;
-    background: white; padding: 1.5rem;
-    border-radius: 12px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-    box-sizing: border-box; width: 100%; 
-}
-.about-card ul { margin-left: 1.5rem; list-style-type: '✅ '; }
-.about-card li { padding-left: 0.5rem; margin-bottom: 10px; }
-.about-card .highlight {
-    background: #e6e6fa; padding: 1.5rem; border-left: 5px solid #6a11cb;
-    border-radius: 8px; font-weight: 600; font-style: italic; color: #4a007c;
-}
-
+/* Contact */
 #contact { background-color: white; }
 form {
     max-width: 600px; margin: 0 auto; padding: 2rem;
@@ -301,63 +286,94 @@ form .btn {
 }
 form .btn:hover { background-color: #2575fc; }
 
-footer { background-color: #333; color: white; padding: 1.5rem 0; font-size: 0.9rem; }
+/* Footer */
+footer { background-color: #333; color: white; padding: 1.5rem 0; font-size: 0.9rem; text-align: center; }
+footer p { margin: 0; }
 
-/* --- Dark Mode --- */
-.dark-mode { background-color: #1a1a2e; color: #f4f7f6; }
-.dark-mode header { background-color: #2a2a4a; box-shadow: 0 2px 15px rgba(255, 255, 255, 0.05); }
-.dark-mode header h2, .dark-mode .menu-toggle { color: #f4f7f6; }
-.dark-mode .nav { background-color: #2a2a4a; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); }
-.dark-mode .nav-item { border-bottom: 1px solid #3c3c6e; }
-.dark-mode .nav-link { color: #f4f7f6; }
-.dark-mode .nav-link:hover { color: #9d4edd; background-color: #3c3c6e; }
-.dark-mode #skills, .dark-mode #about, .dark-mode #projects, .dark-mode #contact { background-color: #1a1a2e; }
-.dark-mode .skill-card, .dark-mode .project-card, .dark-mode .about-card {
-    background-color: #2a2a4a; color: #f4f7f6;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3); border: 1px solid #3c3c6e;
+/* À propos */
+#about { background-color: #f4f7f6; }
+.about-card {
+    background: #fff; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    padding: 20px; line-height: 1.6;
 }
-.dark-mode .skill-card { color: #9d4edd; }
-.dark-mode .about-card .highlight { background: #3c3c6e; color: #f4f7f6; border-left-color: #9d4edd; }
-.dark-mode form { background: #2a2a4a; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3); }
+.about-card ul { list-style: none; padding-left: 0; }
+.about-card li { margin-bottom: 10px; }
+.about-card .highlight {
+    background: #e6e6fa; padding: 15px; border-left: 5px solid #6a11cb;
+    border-radius: 5px; font-weight: 600; color: #4a007c;
+}
+
+/* =========================================
+   5. MODE SOMBRE (ADAPTÉ)
+   ========================================= */
+.dark-mode { background-color: #1a1a2e; color: #f4f7f6; }
+.dark-mode header { background-color: #222; } /* Garde le ton sombre */
+.dark-mode .nav-link { color: white; }
+.dark-mode .nav-link:hover { color: #00bcd4; }
+
+.dark-mode #skills, .dark-mode #projects, .dark-mode #contact, .dark-mode #about { background-color: #1a1a2e; }
+
+.dark-mode .col-md-3, .dark-mode .skill-card, 
+.dark-mode .col-md-4, .dark-mode .project-card,
+.dark-mode .about-card, .dark-mode form {
+    background-color: #2a2a4a; color: #f4f7f6; border: 1px solid #444;
+}
+
 .dark-mode form .form-control { background-color: #3c3c6e; border-color: #555; color: white; }
+.dark-mode form .btn { background-color: #00bcd4; }
 .dark-mode #skills h2, .dark-mode #projects h2, .dark-mode #about h2, .dark-mode #contact h2 { color: #9d4edd; }
+.dark-mode .about-card .highlight { background: #333; border-left: 4px solid #9d4edd; }
 
 
-/* 🚀 DESKTOP (992px et plus) 🚀 */
-@media (min-width: 992px) {
+/* =========================================
+   6. MEDIA QUERIES (POUR TABLETTES & MOBILES)
+   ========================================= */
+@media (max-width: 991px) {
     
-    /* 1. CACHER LE HAMBURGER */
+    /* 1. Afficher le Hamburger */
     .menu-toggle {
-        display: none !important;
-    }
-
-    /* 2. BARRE DE NAVIGATION HORIZONTALE */
-    .nav {
-        display: flex !important; 
-        flex-direction: row !important;
-        position: static !important;
-        width: auto !important;
-        box-shadow: none !important;
-        background-color: transparent !important;
-        margin-right: 0;
-        margin-left: 2rem;
-    }
-
-    .nav-item { border-bottom: none; padding: 0; }
-    .nav-link { padding: 0.5rem 0.7rem; }
-    
-    .nav-link::after {
-        content: '';
         display: block;
-        position: absolute;
-        width: 0;
-        height: 3px;
-        bottom: -5px;
-        left: 0;
-        background-color: #6a11cb;
-        transition: width 0.3s ease-in-out;
     }
 
-    .nav-link:hover::after { width: 100%; }
-    .dark-mode .nav { background-color: transparent; }
+    /* 2. Cacher la Nav PC et la transformer en menu mobile */
+    .nav {
+        display: none; /* Masqué tant qu'on ne clique pas */
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #333; /* Fond sombre cohérent avec le header */
+        padding: 20px 0;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    /* 3. Affichage quand ouvert */
+    .nav.active {
+        display: flex;
+    }
+
+    .nav-link {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 15px 0;
+    }
+    
+    .nav-link:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    /* Ajustement responsive des projets (1 colonne) */
+    #projects .col-md-4, .project-card {
+        flex: 0 0 100%;
+        max-width: 100%;
+        width: 90%;
+        margin-bottom: 20px;
+    }
+    
+    /* Ajustement titre hero */
+    .hero h1 {
+        font-size: 2.2rem;
+    }
 }
