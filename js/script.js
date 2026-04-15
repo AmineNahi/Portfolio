@@ -1,4 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
+    const yearEl = document.getElementById('year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
     const form = document.querySelector(".contact-form");
     const toggleDarkMode = document.getElementById("dark-mode-toggle");
     const nav = document.querySelector('.nav');

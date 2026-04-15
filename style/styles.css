@@ -319,10 +319,11 @@ footer p { margin: 0; }
     background-color: #2a2a4a; color: #f4f7f6; border: 1px solid #444;
 }
 
-.dark-mode form .form-control { background-color: #3c3c6e; border-color: #555; color: white; }
-.dark-mode form .btn { background-color: #00bcd4; }
+.dark-mode form .form-control { background-color: #3c3c6e; border-color: #555; color: #f4f7f6; }
+.dark-mode form .form-label { color: #f4f7f6; }
+.dark-mode form .btn { background-color: #00bcd4; color: #fff; }
 .dark-mode #skills h2, .dark-mode #projects h2, .dark-mode #about h2, .dark-mode #contact h2 { color: #9d4edd; }
-.dark-mode .about-card .highlight { background: #333; border-left: 4px solid #9d4edd; }
+.dark-mode .about-card .highlight { background: #2a2a4a; border-left: 4px solid #9d4edd; color: #f4f7f6; }
 
 
 /* =========================================
