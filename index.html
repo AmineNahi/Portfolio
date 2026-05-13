@@ -1,195 +1,184 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portfolio de Nahi Amine - Développeur Full Stack passionné par l'innovation numérique. Découvrez mes projets en Flutter, C++, et Web.">
-  <meta name="keywords" content="Portfolio, Développeur, Flutter, C++, JavaScript, Web">
-  <meta name="author" content="Nahi Amine">
-  <meta property="og:title" content="Portfolio - Nahi Amine">
-  <meta property="og:description" content="Découvrez mes projets et compétences en développement.">
-  <meta property="og:image" content="images/preview.png">
-  <meta property="og:url" content="https://nahi-amine-portfolio.com">
   <title>Portfolio - Nahi Amine</title>
-  <link rel="stylesheet" href="style/styles.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-  <link rel="preload" href="style/styles.css" as="style">
-  <link rel="preload" href="js/script.js" as="script">
-  <link rel="icon" type="image/jpeg" sizes="32x32" href="images/favicon.jpeg">
+  <meta name="description" content="Portfolio de Nahi Amine - Développeur Full Stack passionné par l'innovation numérique.">
   
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <link rel="stylesheet" href="style/styles.css">
-  <link rel="icon" type="image/jpeg" sizes="32x32" href="images/favicon.jpeg">
-
 </head>
 <body>
-  <header>
-    <div class="container header-content">
-      <h2>Nahi Amine</h2>
-      
-      <ul class="nav">
-        <li class="nav-item"><a href="#skills" class="nav-link">Compétences</a></li>
-        <li class="nav-item"><a href="#projects" class="nav-link">Projets</a></li>
-        <li class="nav-item"><a href="#about" class="nav-link">À propos</a></li>
-        <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
-      </ul>
 
-      <div class="controls">
-        <button id="dark-mode-toggle">🌙 Mode sombre</button>
-        <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+  <aside class="social-sidebar">
+    <a href="https://github.com/AmineNahi" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+    <a href="https://www.linkedin.com/in/amine-nahi-735a72343/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+    <a href="https://www.instagram.com/_amine.nh" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="mailto:amine.nahi@etu.univ-amu.fr" aria-label="Email"><i class="far fa-envelope"></i></a>
+  </aside>
+
+  <div class="main-wrapper">
+    
+    <header class="navbar">
+      <div class="logo">
+        <span>N</span><span class="accent">A</span>
+      </div>
+      <nav class="nav-links">
+        <a href="#accueil" class="active">Accueil</a>
+        <a href="#infos">À propos</a>
+        <a href="#projets">Projets</a>
+        <a href="#infos">Compétences</a>
+      </nav>
+      <a href="#contact" class="btn btn-outline">Me contacter <i class="fas fa-arrow-right"></i></a>
+    </header>
+
+    <section id="accueil" class="hero">
+      <div class="hero-content">
+        <span class="tag">DÉVELOPPEUR FULL STACK</span>
+        <h1>Je conçois des expériences web et applications <span class="highlight">modernes</span> et performantes.</h1>
+        <p>Développeur passionné par la création d'applications élégantes, rapides et accessibles, du front-end au back-end.</p>
+        <div class="hero-buttons">
+          <a href="#projets" class="btn btn-primary">Voir mes projets <i class="fas fa-arrow-right"></i></a>
+          <a href="assets/CV_Amine_Nahi.pdf" download="CV_Amine_Nahi.pdf" class="btn btn-secondary">Télécharger mon CV <i class="fas fa-download"></i></a>       
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="glow-effect"></div>
+        <img src="images/profile.png" alt="Photo de profile de Nahi Amine" class="profile-image">
+      </div>
+    </section>
+
+    <section id="infos" class="info-section">
+      <div class="info-grid">
+        
+        <div class="card">
+          <h3>À propos</h3>
+          <p>Étudiant en BUT Informatique, je me spécialise dans la création d'applications modernes. Curieux, rigoureux et passionné par le code.</p>
+          <a href="#contact" class="link-text">En savoir plus <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="card">
+          <h3>Compétences</h3>
+          <div class="skills-mini-grid">
+            <div class="skill-item"><i class="fab fa-html5" style="color: #e34f26;"></i><span>HTML/CSS</span></div>
+            <div class="skill-item"><i class="fab fa-js" style="color: #f7df1e;"></i><span>JavaScript</span></div>
+            <div class="skill-item"><i class="fab fa-react" style="color: #61dafb;"></i><span>React</span></div>
+            <div class="skill-item"><i class="fab fa-php" style="color: #777bb4;"></i><span>PHP</span></div>
+            <div class="skill-item"><i class="fab fa-java" style="color: #f89820;"></i><span>Java</span></div>
+            <div class="skill-item"><i class="fas fa-mobile-alt" style="color: #42a5f5;"></i><span>Flutter</span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Ce que j'aime</h3>
+          <ul class="likes-list">
+            <li><i class="fas fa-check-circle accent-text"></i> Architecture logicielle</li>
+            <li><i class="fas fa-check-circle accent-text"></i> Performance et SEO</li>
+            <li><i class="fas fa-check-circle accent-text"></i> UI/UX Design</li>
+            <li><i class="fas fa-check-circle accent-text"></i> Code propre et scalable</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="projets" class="projects-section">
+      <div class="section-header">
+        <h2>Mes Projets</h2>
+        <a href="https://github.com/AmineNahi" target="_blank" class="link-text">Voir mon GitHub <i class="fas fa-arrow-right"></i></a>
       </div>
       
-    </div>
-  </header>
-
-  <section class="hero">
-    <div class="container">
-      <h1 class="display-4">Bonjour, je suis <span class="fw-bold">Nahi Amine</span></h1>
-      <p class="lead">Développeur Full Stack | Passionné par l'innovation numérique</p>
-      <a href="#projects" class="btn btn-primary btn-lg mt-3">Voir mes projets</a>
-    </div>
-  </section>
-  
-
-  <section id="skills">
-    <div class="container">
-      <h2>Compétences</h2>
-      <div class="row">
-        <div class="skill-card">PHP</div>
-        <div class="skill-card">JAVA</div>
-        <div class="skill-card">HTML5</div>
-        <div class="skill-card">CSS3</div>
-        <div class="skill-card">JavaScript</div>
-        <div class="skill-card">Python</div>
-        <div class="skill-card">Flutter</div>
-        <div class="skill-card">C++</div>
-        <div class="skill-card">React</div>
-      </div>
-    </div>
-  </section>
-
-  <section id="projects">
-    <div class="container">
-      <h2 class="text-center">Projets</h2>
-      <div class="row mt-4">
+      <div class="projects-grid">
         
         <div class="project-card">
-          <img src="images/Pacman-game.png" alt="Jeu Pac-Man" class="img-fluid rounded">
-          <h3>Jeu revisité de Pac-Man</h3>
-          <p>Un jeu original en C++ où vous incarnez Pac-Man, ramassez des boules pour les utiliser comme projectiles et détruire les fantômes tout en les évitant.</p>
-          <p><strong>Technologies :</strong> C++</p>
-          <a href="https://github.com/AmineNahi/PacMan_game" target="_blank" class="btn">GitHub</a>
-        </div>
-    
-        <div class="project-card">
-          <img src="images/Portfolio.png" alt="Projet 2" class="img-fluid rounded">
-          <h3>Portfolio Dynamique</h3>
-          <p>Site portfolio avec animations et back-end Flask.</p>
-          <p><strong>Technologies :</strong> HTML, CSS, JavaScript, Flask</p>
-          <a href="https://github.com/AmineNahi/Portfolio" target="_blank" class="btn">GitHub</a>
-        </div>
-    
-        <div class="project-card">
-          <img src="images/flutter_app.png" alt="Gestion de Projet" class="img-fluid rounded">
-          <h3>Gestion de Projet (Flutter)</h3>
-          <p>Application de gestion de projet par catégorie avec un cahier des charges intégré pour une meilleure répartition des tâches et une organisation optimale.</p>
-          <p><strong>Technologies :</strong> Flutter, Dart</p>
-          <a href="https://github.com/AmineNahi/CodeBrief" target="_blank" class="btn">GitHub</a>
+          <div class="project-image" style="background-image: url('images/amu-project.png');"></div>
+          <div class="project-content">
+            <div class="tags">
+              <span>PHP (POO)</span><span>MySQL</span><span>JS</span>
+            </div>
+            <h3>Mobilité Internationale (AMU)</h3>
+            <p>Conception d'une application MVC pour la gestion des dossiers étudiants d'Aix-Marseille Université. Moteur d'importation sécurisé.</p>
+            <a href="https://github.com/AmineNahi/Portfolio" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+          </div>
         </div>
 
         <div class="project-card">
-          <img src="images/sunne-sport.png" alt="Site Sunne-Sport" class="img-fluid rounded">
-          <h3>Sunne-Sport</h3>
-          <p>Site web conçu pour organiser un tournoi e-sport à l'IUT d'Aix-en-Provence. Il gérait les inscriptions, le suivi des matchs et la communication de l'événement.</p>
-          <p><strong>Technologies :</strong> HTML, CSS, JavaScript, PHP</p>
-          <a href="https://github.com/AmineNahi/Sunne-Sport" target="_blank" class="btn">GitHub</a>
+          <div class="project-image" style="background-image: url('images/sunne-sport.png');"></div>
+          <div class="project-content">
+            <div class="tags">
+              <span>HTML/CSS</span><span>PHP</span><span>JS</span>
+            </div>
+            <h3>Sunne-Sport</h3>
+            <p>Site web organisé pour un tournoi e-sport à l'IUT d'Aix-en-Provence. Gestion des inscriptions, suivi des matchs et communication.</p>
+            <a href="https://github.com/AmineNahi/Sunne-Sport" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+          </div>
         </div>
 
         <div class="project-card">
-          <img src="images/amu-project.png" alt="Plateforme AMU" class="img-fluid rounded">
-          <h3>Mobilité Internationale (AMU)</h3>
-          <p>Conception et déploiement d'une application MVC pour la gestion des dossiers étudiants d'Aix-Marseille Université. Moteur d'importation sécurisé et création d'interfaces dynamiques.</p>
-          <p><strong>Technologies :</strong> PHP (POO), MySQL, JavaScript (ES6), HTML, CSS</p>
-          <a href="https://github.com/AmineNahi/Portfolio" target="_blank" class="btn">GitHub</a>
+          <div class="project-image" style="background-image: url('images/flutter_app.png');"></div>
+          <div class="project-content">
+            <div class="tags">
+              <span>Flutter</span><span>Dart</span>
+            </div>
+            <h3>CodeBrief (Gestion de Projet)</h3>
+            <p>Application mobile de gestion de projet avec cahier des charges intégré pour une répartition des tâches et une organisation optimale.</p>
+            <a href="https://github.com/AmineNahi/CodeBrief" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+          </div>
         </div>
 
+        <div class="project-card">
+          <div class="project-image" style="background-image: url('images/Pacman-game.png');"></div>
+          <div class="project-content">
+            <div class="tags">
+              <span>C++</span>
+            </div>
+            <h3>Jeu Pac-Man Revisité</h3>
+            <p>Jeu original en C++ : incarnez Pac-Man, ramassez des boules pour les utiliser comme projectiles et détruisez les fantômes.</p>
+            <a href="https://github.com/AmineNahi/PacMan_game" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-image" style="background-image: url('images/Portfolio.png');"></div>
+          <div class="project-content">
+            <div class="tags">
+              <span>HTML/CSS</span><span>JS</span><span>Flask</span>
+            </div>
+            <h3>Portfolio Dynamique</h3>
+            <p>Création d'un site portfolio interactif intégrant des animations fluides et propulsé par un back-end en Flask.</p>
+            <a href="https://github.com/AmineNahi/Portfolio" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+          </div>
+        </div>
 
       </div>
-    </div>
-  </section>
-  
+    </section>
 
-  <section id="about">
-    <div class="container">
-      <h2 class="text-center">À propos</h2>
-      <div class="about-card">
-        <p><strong>Étudiant en BUT Informatique</strong>, je me spécialise dans la création de sites vitrine modernes et sur-mesure pour les artisans, indépendants et petites entreprises.</p>
-
-        <p>Vous souhaitez :</p>
-        <ul>
-          <li>Un site rapide et qui s'affiche parfaitement sur mobile ?</li>
-          <li>Une vitrine professionnelle pour attirer de nouveaux clients ?</li>
-          <li>Moderniser un site existant qui ne vous représente plus ?</li>
-        </ul>
-
-        <p>Je maîtrise les technologies actuelles (<strong>HTML, CSS, JavaScript, React</strong>) pour vous livrer un site web à votre image, optimisé pour le référencement (SEO).</p>
-
-        <p class="highlight mt-3">✨ Je cherche mes <strong>3 premiers clients motivés</strong> ! ✨<br>
-        En échange de votre confiance, je vous propose des tarifs préférentiels et un suivi personnalisé.</p>
-
-        <div class="text-center mt-4">
-          <a href="#contact" class="btn btn-primary btn-lg">📩 Me contacter</a>
-        </div>
+    <section id="contact" class="contact-section">
+      <div class="card contact-card">
+        <h2>Prêt à collaborer ?</h2>
+        <p>Je suis actuellement à la recherche de nouveaux défis et de mes 3 premiers clients motivés. Discutons de votre projet avec des tarifs préférentiels !</p>
+        <form action="https://formspree.io/f/mzzdgdqz" method="POST" class="contact-form mt-4">
+          <div class="form-row">
+            <input type="text" name="name" placeholder="Votre nom" required>
+            <input type="email" name="email" placeholder="Votre email" required>
+          </div>
+          <textarea name="message" rows="4" placeholder="Votre message" required></textarea>
+          <button type="submit" class="btn btn-primary">Envoyer le message <i class="fas fa-paper-plane"></i></button>
+        </form>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="contact">
-    <div class="container">
-      <h2 class="text-center">Contact</h2>
-      <p class="text-center">N'hésitez pas à me contacter pour toute question ou opportunité professionnelle.</p>
-    
-      <form action="https://formspree.io/f/mzzdgdqz" method="POST" class="contact-form mt-4">
-        <div class="mb-3">
-          <label for="name" class="form-label">Nom</label>
-          <input type="text" class="form-control" id="name" name="name" placeholder="Votre nom" required>
-        </div>
-    
-        <div class="mb-3">
-          <label for="prenom" class="form-label">Prénom</label>
-          <input type="text" class="form-control" id="prenom" name="prenom" placeholder="Votre prénom" required>
-        </div>
-    
-        <div class="mb-3">
-          <label for="email" class="form-label">Email</label>
-          <input type="email" class="form-control" id="email" name="email" placeholder="Votre email" required>
-        </div>
-    
-        <div class="mb-3">
-          <label for="sujet" class="form-label">Sujet</label>
-          <input type="text" class="form-control" id="sujet" name="sujet" placeholder="Sujet de votre message">
-        </div>
-    
-        <div class="mb-3">
-          <label for="message" class="form-label">Message</label>
-          <textarea class="form-control" id="message" name="message" rows="4" placeholder="Votre message" required></textarea>
-        </div>
-    
-        <input type="hidden" name="_subject" value="Nouveau message depuis le portfolio">
-        <input type="hidden" name="_captcha" value="false"> 
-    
-        <button type="submit" class="btn btn-primary w-100">Envoyer</button>
-      </form>
-    </div>
-  </section>
-  
+    <footer>
+      <p>© <span id="year"></span> Nahi Amine. Tous droits réservés.</p>
+    </footer>
 
+  </div>
 
-  <footer class="text-center">
-    <p>© <span id="year"></span> Nahi Amine. Tous droits réservés.</p>
-  </footer>
-
-  <script src="js/script.js" defer></script>
+  <script src="js/script.js"></script>
 </body>
 </html>

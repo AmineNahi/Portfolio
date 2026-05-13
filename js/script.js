@@ -1,41 +1,19 @@
 document.addEventListener("DOMContentLoaded", function () {
+    // 1. Mise à jour de l'année dans le footer
     const yearEl = document.getElementById('year');
     if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+    // 2. Gestion du formulaire de contact (Formspree)
     const form = document.querySelector(".contact-form");
-    const toggleDarkMode = document.getElementById("dark-mode-toggle");
-    const nav = document.querySelector('.nav');
-    const menuToggle = document.querySelector('.menu-toggle');
     
-    // --- 0. Détection des préférences utilisateur et initialisation ---
-    if (toggleDarkMode) {
-        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-        
-        // Initialisation du thème basé sur la préférence système
-        if (prefersDark) {
-            document.body.classList.add('dark-mode');
-            toggleDarkMode.innerHTML = "☀️ Mode clair"; 
-        } else {
-            toggleDarkMode.innerHTML = "🌙 Mode sombre";
-        }
-
-        // 1. Gestion du Mode Sombre (Manuel)
-        toggleDarkMode.addEventListener("click", function () {
-            document.body.classList.toggle("dark-mode");
-            toggleDarkMode.innerHTML = document.body.classList.contains("dark-mode") ? "☀️ Mode clair" : "🌙 Mode sombre";
-        });
-    }
-
-    // --- 2. Gestion du formulaire de contact (Formspree) ---
-    if (!form) {
-        console.error("Formulaire non trouvé...");
-    } else {
+    if (form) {
         form.addEventListener("submit", async function (event) {
             event.preventDefault(); 
             const formData = new FormData(form);
             
             const submitButton = form.querySelector('button[type="submit"]');
-            const originalText = submitButton.textContent;
-            submitButton.textContent = "Envoi en cours...";
+            const originalText = submitButton.innerHTML;
+            submitButton.innerHTML = "Envoi en cours... <i class='fas fa-spinner fa-spin'></i>";
             submitButton.disabled = true;
 
             try {
@@ -55,25 +33,19 @@ document.addEventListener("DOMContentLoaded", function () {
                 alert("Erreur réseau. Vérifiez votre connexion.");
                 console.error(error);
             } finally {
-                submitButton.textContent = originalText;
+                submitButton.innerHTML = originalText;
                 submitButton.disabled = false;
             }
         });
     }
 
-    // --- 3. Gestion du Menu Hamburger (Ouverture/Fermeture) ---
-    if (menuToggle && nav) {
-        menuToggle.addEventListener('click', function() {
-            nav.classList.toggle('active');
-            this.textContent = nav.classList.contains('active') ? '✖' : '☰';
-        });
-
-        // Fermer le menu après un clic sur un lien (UX mobile)
-        nav.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', () => {
-                nav.classList.remove('active');
-                menuToggle.textContent = '☰'; 
+    // 3. Smooth scroll pour les liens d'ancrage
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
             });
         });
-    }
+    });
 });
