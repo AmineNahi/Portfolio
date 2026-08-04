@@ -2,15 +2,16 @@
    1. VARIABLES & RESET
    ========================================= */
    :root {
-    --bg-main: #0a0b10;
-    --bg-surface: #13141c;
-    --bg-surface-hover: #1c1d27;
-    --accent: #6b4cff;
-    --accent-hover: #8367ff;
-    --text-primary: #ffffff;
-    --text-secondary: #a0a4b8;
-    --border: rgba(255, 255, 255, 0.08);
-    --font-main: 'Inter', sans-serif;
+    --bg-main: #0a0908;
+    --bg-surface: #141210;
+    --bg-surface-hover: #1c1a18;
+    --accent: #cfa872;
+    --accent-hover: #e3c498;
+    --text-primary: #e8e3d9;
+    --text-secondary: #8c857b;
+    --border: rgba(207, 168, 114, 0.15);
+    --font-heading: 'Cormorant Garamond', serif;
+    --font-body: 'Montserrat', sans-serif;
 }
 
 * {
@@ -19,17 +20,29 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    font-family: var(--font-main);
+    font-family: var(--font-body);
     background-color: var(--bg-main);
     color: var(--text-primary);
-    line-height: 1.6;
+    line-height: 1.8;
     overflow-x: hidden;
+    font-weight: 300;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 400;
+    letter-spacing: 0.05em;
 }
 
 a {
     text-decoration: none;
     color: inherit;
+    transition: color 0.4s ease;
 }
 
 /* =========================================
@@ -40,32 +53,51 @@ a {
     left: 0;
     top: 0;
     height: 100vh;
-    width: 60px;
+    width: 80px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 30px;
+    gap: 40px;
     background: transparent;
     z-index: 100;
+    border-right: 1px solid var(--border);
 }
 
 .social-sidebar a {
     color: var(--text-secondary);
-    font-size: 1.2rem;
-    transition: color 0.3s, transform 0.3s;
+    font-size: 1.1rem;
+    transition: color 0.4s ease, transform 0.4s ease;
 }
 
 .social-sidebar a:hover {
     color: var(--accent);
-    transform: translateY(-3px);
+    transform: translateY(-4px);
+}
+
+.social-sidebar::after {
+    content: '';
+    position: absolute;
+    bottom: 40px;
+    width: 1px;
+    height: 100px;
+    background-color: var(--border);
+}
+
+.social-sidebar::before {
+    content: '';
+    position: absolute;
+    top: 40px;
+    width: 1px;
+    height: 100px;
+    background-color: var(--border);
 }
 
 .main-wrapper {
-    margin-left: 60px; /* Compense la sidebar */
-    padding: 0 40px;
+    margin-left: 80px; 
+    padding: 0 60px;
     max-width: 1400px;
-    margin: 0 auto 0 60px;
+    margin: 0 auto 0 80px;
 }
 
 /* =========================================
@@ -75,96 +107,112 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px 0;
+    padding: 40px 0;
+    border-bottom: 1px solid transparent;
 }
 
 .logo {
-    font-size: 1.5rem;
-    font-weight: 700;
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
 }
 
 .logo .accent {
     color: var(--accent);
+    font-style: italic;
 }
 
 .nav-links {
     display: flex;
-    gap: 30px;
+    gap: 40px;
 }
 
 .nav-links a {
-    font-size: 0.9rem;
-    font-weight: 500;
+    font-size: 0.8rem;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
     color: var(--text-secondary);
-    transition: color 0.3s;
 }
 
 .nav-links a:hover, .nav-links a.active {
-    color: var(--text-primary);
+    color: var(--accent);
 }
 
 /* =========================================
    4. BUTTONS
    ========================================= */
 .btn {
-    padding: 10px 24px;
-    border-radius: 30px;
-    font-weight: 500;
-    font-size: 0.9rem;
+    padding: 12px 32px;
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
     cursor: pointer;
-    transition: all 0.3s;
+    transition: all 0.4s ease;
     display: inline-flex;
     align-items: center;
-    gap: 10px;
-    border: none;
+    justify-content: center;
+    gap: 12px;
+    border: 1px solid var(--border);
+    border-radius: 0;
 }
 
 .btn-primary {
     background-color: var(--accent);
-    color: white;
+    color: var(--bg-main);
+    border-color: var(--accent);
 }
 
 .btn-primary:hover {
-    background-color: var(--accent-hover);
-    transform: translateY(-2px);
+    background-color: transparent;
+    color: var(--accent);
 }
 
 .btn-outline {
     background-color: transparent;
-    border: 1px solid var(--border);
     color: var(--text-primary);
 }
 
 .btn-outline:hover {
     border-color: var(--accent);
+    color: var(--accent);
 }
 
 .btn-secondary {
-    background-color: transparent;
-    border: 1px solid var(--border);
+    background-color: var(--bg-surface);
     color: var(--text-primary);
-    border-radius: 30px;
 }
 
 .btn-secondary:hover {
-    background-color: var(--border);
+    background-color: var(--accent);
+    color: var(--bg-main);
+    border-color: var(--accent);
 }
 
 .link-text {
     color: var(--accent);
-    font-size: 0.9rem;
-    font-weight: 500;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    margin-top: 15px;
+    margin-top: 20px;
+    border-bottom: 1px solid transparent;
+    padding-bottom: 2px;
+    transition: all 0.3s ease;
 }
 
 .link-text:hover {
-    text-decoration: underline;
+    border-color: var(--accent);
+    text-decoration: none;
 }
 
-.accent-text { color: var(--accent); }
+.accent-text { color: var(--accent); font-style: italic; }
 
 /* =========================================
    5. HERO SECTION
@@ -173,41 +221,44 @@ a {
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
-    min-height: 80vh;
-    gap: 40px;
+    min-height: 85vh;
+    gap: 60px;
 }
 
 .tag {
     color: var(--accent);
-    font-size: 0.8rem;
-    font-weight: 600;
-    letter-spacing: 1px;
+    font-size: 0.75rem;
+    font-weight: 400;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
     display: block;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .hero h1 {
-    font-size: 3.5rem;
-    line-height: 1.1;
-    margin-bottom: 20px;
-    font-weight: 700;
+    font-size: 4.5rem;
+    line-height: 1.05;
+    margin-bottom: 30px;
 }
 
 .hero .highlight {
     color: var(--accent);
+    font-style: italic;
+    font-weight: 300;
 }
 
 .hero p {
     color: var(--text-secondary);
-    font-size: 1.1rem;
-    margin-bottom: 40px;
-    max-width: 500px;
+    font-size: 1.05rem;
+    margin-bottom: 50px;
+    max-width: 480px;
+    font-weight: 300;
+    line-height: 1.9;
 }
 
 .hero-buttons {
     display: flex;
-    gap: 15px;
+    gap: 20px;
 }
 
 .hero-visual {
@@ -220,178 +271,213 @@ a {
 
 .glow-effect {
     position: absolute;
-    width: 400px;
-    height: 400px;
-    background: radial-gradient(circle, rgba(107, 76, 255, 0.4) 0%, rgba(10, 11, 16, 0) 70%);
+    width: 340px;
+    height: 440px;
+    border: 1px solid var(--border);
     z-index: -1;
-    border-radius: 50%;
+    transform: rotate(5deg);
+    transition: transform 0.8s ease;
+}
+
+.hero-visual:hover .glow-effect {
+    transform: rotate(0deg);
 }
 
 .profile-image {
-    width: 300px;
-    height: 300px;
-    object-fit: cover; /* Assure que l'image remplit le cadre sans déformation */
-    border-radius: 50%; /* Maintient la forme circulaire (si tu préfères un carré arrondi, change à 16px par exemple) */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.5); /* Conserve l'ombre portée */
-    border: 1px solid var(--border); /* Conserve la bordure subtile */
+    width: 320px;
+    height: 420px;
+    object-fit: cover;
+    border-radius: 0;
+    filter: grayscale(20%) contrast(110%);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+    border: none;
+    transition: filter 0.8s ease;
 }
+
+.hero-visual:hover .profile-image {
+    filter: grayscale(0%) contrast(100%);
+}
+
 
 /* =========================================
    6. INFO CARDS (À propos, Compétences...)
    ========================================= */
 .info-section {
-    padding: 60px 0;
+    padding: 100px 0;
+    border-top: 1px solid var(--border);
 }
 
 .info-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    gap: 40px;
 }
 
 .card {
     background-color: var(--bg-surface);
     border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 30px;
-    transition: transform 0.3s, border-color 0.3s;
+    padding: 50px 40px;
+    transition: transform 0.5s ease, border-color 0.5s ease;
+    border-radius: 0;
 }
 
 .card:hover {
-    transform: translateY(-5px);
-    border-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-10px);
+    border-color: var(--accent);
 }
 
 .card h3 {
-    font-size: 1.2rem;
-    margin-bottom: 15px;
+    font-size: 1.6rem;
+    margin-bottom: 20px;
     color: var(--text-primary);
 }
 
 .card p {
-    color: var(--text-primary);
+    color: var(--text-secondary);
     font-size: 0.95rem;
 }
 
 .skills-mini-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-    margin-top: 20px;
+    gap: 25px;
+    margin-top: 30px;
 }
 
 .skill-item {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 8px;
-    font-size: 0.8rem;
-    color: var(--text-primary);
+    gap: 12px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-secondary);
+    transition: color 0.3s ease;
+}
+
+.skill-item:hover {
+    color: var(--accent);
 }
 
 .skill-item i {
     font-size: 1.8rem;
+    font-weight: 300;
 }
 
 .likes-list {
     list-style: none;
-    margin-top: 15px;
+    margin-top: 25px;
 }
 
 .likes-list li {
-    margin-bottom: 12px;
+    margin-bottom: 15px;
     font-size: 0.95rem;
-    color: var(--text-primary);
+    color: var(--text-secondary);
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 15px;
+}
+
+.likes-list li i {
+    color: var(--accent);
 }
 
 /* =========================================
    7. PROJECTS
    ========================================= */
 .projects-section {
-    padding: 80px 0;
+    padding: 100px 0;
+    border-top: 1px solid var(--border);
 }
 
 .section-header {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    margin-bottom: 40px;
-    padding-bottom: 20px;
+    margin-bottom: 60px;
+    padding-bottom: 30px;
     border-bottom: 1px solid var(--border);
 }
 
 .section-header h2 {
-    font-size: 1.8rem;
+    font-size: 2.5rem;
 }
 
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
+    gap: 40px;
 }
 
 .project-card {
     background-color: var(--bg-surface);
     border: 1px solid var(--border);
-    border-radius: 16px;
     overflow: hidden;
-    transition: transform 0.3s;
+    transition: all 0.5s ease;
     position: relative;
+    border-radius: 0;
 }
 
 .project-card:hover {
-    transform: translateY(-8px);
+    transform: translateY(-10px);
+    border-color: var(--accent);
 }
 
 .project-image {
-    height: 200px;
+    height: 250px;
     background-size: cover;
     background-position: center;
-    background-color: #1c1d27; /* Fallback */
+    background-color: var(--bg-surface-hover);
     border-bottom: 1px solid var(--border);
+    filter: grayscale(40%);
+    transition: filter 0.5s ease;
+}
+
+.project-card:hover .project-image {
+    filter: grayscale(0%);
 }
 
 .project-content {
-    padding: 25px;
+    padding: 35px 30px;
 }
 
 .tags {
     display: flex;
-    gap: 10px;
-    margin-bottom: 15px;
+    gap: 12px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
 }
 
 .tags span {
-    background-color: rgba(255,255,255,0.05);
-    padding: 4px 10px;
-    border-radius: 20px;
-    font-size: 0.75rem;
+    border: 1px solid var(--border);
+    padding: 6px 14px;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
     color: var(--text-secondary);
+    background: transparent;
 }
 
 .project-card h3 {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
 }
 
 .project-card p {
     color: var(--text-secondary);
     font-size: 0.9rem;
-    margin-bottom: 15px;
+    margin-bottom: 30px;
+    line-height: 1.8;
 }
 
 .project-link {
     position: absolute;
-    bottom: 25px;
-    right: 25px;
+    bottom: 35px;
+    right: 30px;
     color: var(--text-secondary);
-    transition: color 0.3s;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
 }
 
 .project-link:hover {
@@ -401,39 +487,51 @@ a {
 /* =========================================
    8. CONTACT FORM
    ========================================= */
-.contact-section { padding: 40px 0 80px; }
+.contact-section { padding: 100px 0; border-top: 1px solid var(--border); }
 
 .contact-card {
-    max-width: 800px;
+    max-width: 700px;
     margin: 0 auto;
     text-align: center;
-    color: var(--text-primary);
 }
 
-.contact-card h2, .contact-card p {
-    color: var(--text-primary);
+.contact-card h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.contact-card p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
 }
 
 .contact-form {
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    margin-top: 30px;
+    gap: 25px;
+    margin-top: 50px;
 }
 
 .form-row {
     display: flex;
-    gap: 15px;
+    gap: 25px;
 }
 
 .contact-form input, .contact-form textarea {
     width: 100%;
-    padding: 15px;
-    background-color: rgba(255, 255, 255, 0.03);
+    padding: 18px 20px;
+    background-color: transparent;
     border: 1px solid var(--border);
-    border-radius: 8px;
     color: var(--text-primary);
-    font-family: var(--font-main);
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    transition: border-color 0.3s ease;
+    border-radius: 0;
+}
+
+.contact-form input::placeholder, .contact-form textarea::placeholder {
+    color: var(--text-secondary);
+    opacity: 0.5;
 }
 
 .contact-form input:focus, .contact-form textarea:focus {
@@ -446,25 +544,29 @@ a {
    ========================================= */
 footer {
     text-align: center;
-    padding: 30px 0;
+    padding: 50px 0;
     color: var(--text-secondary);
-    font-size: 0.9rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
     border-top: 1px solid var(--border);
 }
 
 @media (max-width: 1024px) {
-    .hero { grid-template-columns: 1fr; text-align: center; }
-    .hero p { margin: 0 auto 30px; }
+    .hero { grid-template-columns: 1fr; text-align: center; gap: 40px; }
+    .hero p { margin: 0 auto 40px; }
     .hero-buttons { justify-content: center; }
     .info-grid { grid-template-columns: 1fr; }
-    .projects-grid { grid-template-columns: repeat(2, 1fr); }
+    .projects-grid { grid-template-columns: repeat(2, 1fr); gap: 30px; }
+    .glow-effect { display: none; }
 }
 
 @media (max-width: 768px) {
-    .social-sidebar { display: none; } /* On cache la sidebar sur mobile */
-    .main-wrapper { margin-left: 0; padding: 0 20px; }
-    .nav-links { display: none; } /* À remplacer par un burger menu si besoin */
-    .hero h1 { font-size: 2.5rem; }
+    .social-sidebar { display: none; }
+    .main-wrapper { margin-left: 0; padding: 0 25px; }
+    .nav-links { display: none; }
+    .hero h1 { font-size: 3rem; }
     .projects-grid { grid-template-columns: 1fr; }
-    .form-row { flex-direction: column; }
+    .form-row { flex-direction: column; gap: 25px; }
+    .profile-image { width: 100%; max-width: 320px; height: auto; aspect-ratio: 3/4; }
 }

@@ -27,15 +27,15 @@ export default function Layout() {
           <nav className="nav-links">
             {isBusiness ? (
               <>
-                <Link to="/entreprise" className={location.pathname === '/entreprise' ? 'active' : ''}>PME Accueil</Link>
-                <Link to="/entreprise/services" className={location.pathname === '/entreprise/services' ? 'active' : ''}>Services</Link>
-                <Link to="/entreprise/cas-clients" className={location.pathname === '/entreprise/cas-clients' ? 'active' : ''}>Cas Clients</Link>
+                <a href="#accueil-entreprise">Accueil PME</a>
+                <a href="#services">Services</a>
+                <a href="#cas-clients">Cas Clients</a>
               </>
             ) : (
               <>
-                <Link to="/" className={location.pathname === '/' ? 'active' : ''}>Accueil</Link>
-                <Link to="/profil" className={location.pathname === '/profil' ? 'active' : ''}>Profil</Link>
-                <Link to="/projets" className={location.pathname === '/projets' ? 'active' : ''}>Projets</Link>
+                <a href="#accueil">Accueil</a>
+                <a href="#profil">Profil</a>
+                <a href="#projets">Projets</a>
               </>
             )}
           </nav>
@@ -44,9 +44,9 @@ export default function Layout() {
             <Link to={isBusiness ? "/" : "/entreprise"} style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', textDecoration: 'none' }}>
               {isBusiness ? <><i className="fas fa-user"></i> Espace Perso</> : <><i className="fas fa-building"></i> Espace PME</>}
             </Link>
-            <Link to="/contact" className="btn btn-outline">
+            <a href="#contact" className="btn btn-outline">
               Contact <i className="fas fa-arrow-right"></i>
-            </Link>
+            </a>
           </div>
         </header>
 

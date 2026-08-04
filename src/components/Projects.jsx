@@ -40,6 +40,38 @@ const projectsData = [
     desc: "Création d'un site portfolio interactif intégrant des animations fluides propulsé par un back-end en Flask.",
     img: "/images/Portfolio.png",
     link: "https://github.com/AmineNahi/Portfolio"
+  },
+  {
+    id: 6,
+    title: "Cas Client : Suivi financier automatisé",
+    tech: ["PostgreSQL", "Backend", "Automatisation"],
+    desc: "Application sur-mesure avec backend centralisé et automatisation des emails de relance.",
+    img: "/images/suivi-financier.png",
+    link: "/entreprise#cas-clients"
+  },
+  {
+    id: 7,
+    title: "Cas Client : Gestion de charge (MPP)",
+    tech: ["Data", "Outil Interne"],
+    desc: "Outil permettant de calculer et projeter la charge de travail des équipes en ETP à partir de fichiers MPP.",
+    img: "/images/gestion-charge.png",
+    link: "/entreprise#cas-clients"
+  },
+  {
+    id: 8,
+    title: "Cas Client : Génération de RFF (PDF)",
+    tech: ["PDF", "Automatisation"],
+    desc: "Moteur de génération automatique qui fusionne et compile les différents PDF selon les données métiers.",
+    img: "/images/generateur-pdf.png",
+    link: "/entreprise#cas-clients"
+  },
+  {
+    id: 9,
+    title: "Cas Client : Catalogue et Devis",
+    tech: ["Web", "Outil Métier"],
+    desc: "Catalogue web interactif intégrant toutes les règles métier pour construire dynamiquement un devis.",
+    img: "/images/catalogue.png",
+    link: "/entreprise#cas-clients"
   }
 ];
 
@@ -52,10 +84,10 @@ export default function Projects() {
           Voir mon GitHub <i className="fas fa-arrow-right"></i>
         </a>
       </div>
-      
+
       <div className="projects-grid">
         {projectsData.map((project, index) => (
-          <motion.div 
+          <motion.div
             key={project.id}
             className="project-card"
             initial={{ opacity: 0, y: 50 }}

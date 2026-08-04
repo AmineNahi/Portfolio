@@ -3,13 +3,8 @@ import { HelmetProvider } from 'react-helmet-async';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
 import Layout from './components/Layout';
-import Home from './pages/Home';
-import ProfilePage from './pages/Perso/ProfilePage';
-import ProjectsPage from './pages/Perso/ProjectsPage';
-import EnterpriseHome from './pages/Entreprise/EnterpriseHome';
-import ServicesPage from './pages/Entreprise/ServicesPage';
-import CaseStudiesPage from './pages/Entreprise/CaseStudiesPage';
-import ContactPage from './pages/ContactPage';
+import PersoSinglePage from './pages/PersoSinglePage';
+import EnterpriseSinglePage from './pages/EnterpriseSinglePage';
 
 function App() {
   return (
@@ -17,18 +12,8 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Layout />}>
-            {/* Espace Perso */}
-            <Route index element={<Home />} />
-            <Route path="profil" element={<ProfilePage />} />
-            <Route path="projets" element={<ProjectsPage />} />
-            
-            {/* Espace PME */}
-            <Route path="entreprise" element={<EnterpriseHome />} />
-            <Route path="entreprise/services" element={<ServicesPage />} />
-            <Route path="entreprise/cas-clients" element={<CaseStudiesPage />} />
-            
-            {/* Contact global */}
-            <Route path="contact" element={<ContactPage />} />
+            <Route index element={<PersoSinglePage />} />
+            <Route path="entreprise" element={<EnterpriseSinglePage />} />
           </Route>
         </Routes>
       </Router>
