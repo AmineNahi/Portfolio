@@ -1,29 +1,11 @@
-import { Helmet } from 'react-helmet-async';
+
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
 export default function EnterpriseHome() {
   return (
     <>
-      <Helmet>
-        <title>Création d'outils internes pour PME | Développeur Freelance</title>
-        <meta name="description" content="Développeur freelance spécialisé dans la digitalisation des PME. Automatisez vos tâches, centralisez vos données et développez des applications métier sur-mesure." />
-        <meta name="keywords" content="Freelance dev PME, automatisation processus, création outils internes, développeur freelance entreprise, digitalisation métier" />
-        <script type="application/ld+json">
-          {`
-            {
-              "@context": "https://schema.org",
-              "@type": "Service",
-              "name": "Développement d'outils internes sur-mesure",
-              "provider": {
-                "@type": "Person",
-                "name": "Amine Nahi"
-              },
-              "description": "Création d'applications métier pour automatiser et centraliser les processus des PME."
-            }
-          `}
-        </script>
-      </Helmet>
+
       
       <section className="info-section" style={{ paddingTop: '80px' }}>
         <div style={{ textAlign: 'center', marginBottom: '3rem' }}>

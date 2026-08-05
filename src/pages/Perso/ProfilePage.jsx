@@ -1,14 +1,11 @@
-import { Helmet } from 'react-helmet-async';
+
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
 export default function ProfilePage() {
   return (
     <>
-      <Helmet>
-        <title>Profil & Compétences | Amine Nahi - Freelance Full Stack</title>
-        <meta name="description" content="Développeur freelance spécialisé React, Node.js, Python et PostgreSQL. J'analyse, je conçois et je déploie des applications robustes." />
-      </Helmet>
+
       
       <section className="info-section" style={{ paddingTop: '80px' }}>
         <div className="section-header">

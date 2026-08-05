@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet-async';
+
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
@@ -48,11 +48,7 @@ export default function CaseStudiesPage() {
 
   return (
     <>
-      <Helmet>
-        <title>Cas Clients | Développeur Freelance PME | Amine Nahi</title>
-        <meta name="description" content="Découvrez les projets réalisés pour des PME : suivi financier automatisé, gestion de charge, automatisation de génération de PDF et catalogue de devis." />
-        <meta name="keywords" content="Cas clients développeur freelance, portfolio développeur PME, exemples applications métier, automatisation processus" />
-      </Helmet>
+
       
       <section className="info-section" style={{ paddingTop: '80px' }}>
         <div className="section-header">
